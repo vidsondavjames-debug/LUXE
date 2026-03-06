@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXE Homepage</title>
+  <link rel="icon" type="image/x-icon" href="./assets/Homepage-favicon.png">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background: #fff;
+    }
+
+    /* HERO */
+    .lux-hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .lux-hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lux-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .lux-overlay h1 {
+      font-size: 3rem;
+      letter-spacing: 4px;
+    }
+
+    /* SECTIONS */
+    .lux-row {
+      display: flex;
+      min-height: 450px;
+    }
+
+    .lux-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .lux-img {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .lux-text {
+      flex: 1;
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .lux-text h2 {
+      font-size: 2rem;
+    }
+
+    .lux-btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: 1px solid gold;
+      text-decoration: none;
+      color: black;
+      width: fit-content;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lux-btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+      transition: 0.6s;
+    }
+
+    .lux-btn:hover::after {
+      left: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="lux-hero">
+    <video autoplay muted loop>
+      <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+    </video>
+    <div class="lux-overlay">
+      <h1>WELCOME TO LUXE</h1>
+      <p>Luxury Fashion Redefined</p>
+    </div>
+  </section>
+
+  <!-- MEN -->
+  <section class="lux-row">
+    <div class="lux-img" style="background-image:url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd53');">
+    </div>
+    <div class="lux-text">
+      <h2>Men's Collection</h2>
+      <p>Premium menswear crafted for confidence and prestige.</p>
+      <a class="lux-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- WOMEN -->
+  <section class="lux-row reverse">
+    <div class="lux-img" style="background-image:url('https://images.unsplash.com/photo-1520975916090-3105956dac38');">
+    </div>
+    <div class="lux-text">
+      <h2>Women's Collection</h2>
+      <p>Elegant, graceful and modern luxury fashion.</p>
+      <a class="lux-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- SHOES -->
+  <section class="lux-row">
+    <div class="lux-img" style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff');">
+    </div>
+    <div class="lux-text">
+      <h2>Shoes</h2>
+      <p>Luxury footwear built for comfort and status.</p>
+      <a class="lux-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- BAGS -->
+  <section class="lux-row reverse">
+    <div class="lux-img" style="background-image:url('https://images.unsplash.com/photo-1584917865442-de89df76afd3');">
+    </div>
+    <div class="lux-text">
+      <h2>Bags</h2>
+      <p>Iconic designer bags for everyday luxury.</p>
+      <a class="lux-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- WATCHES -->
+  <section class="lux-row">
+    <div class="lux-img" style="background-image:url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d');">
+    </div>
+    <div class="lux-text">
+      <h2>Watches</h2>
+      <p>Timeless watches designed for distinction.</p>
+      <a class="lux-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- ACCESSORIES -->
+  <section class="lux-row reverse">
+    <div class="lux-img" style="background-image:url('https://images.unsplash.com/photo-1605100804763-247f67b3557e');">
+    </div>
+    <div class="lux-text">
+      <h2>Accessories</h2>
+      <p>Luxury rings, necklaces and finishing touches.</p>
+      <a class="lux-btn">Shop Now</a>
+    </div>
+  </section>
+
+  <script>
+  AOS.init();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Style Sheet Link -->
+  <link rel="stylesheet" href="./style.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS Link -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+  <title>About US</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #fafafa;
+      color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .section {
+      width: 100%;
+      padding: 4rem 3rem;
+      text-align: center;
+    }
+
+    .about-text {
+      max-width: 850px;
+      margin: 0 auto;
+      color: #555;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* TEAM */
+    .our-team {}
+
+    .team-container {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .team-card {
+      background-image: url(./assets/ChatGPT\ Image\ Feb\ 20\,\ 2026\,\ 12_29_48\ PM.png);
+      background-repeat: no-repeat;
+      /* height: 2000px; */
+      width: 90%;
+      max-width: 900px;
+      background: rgba(128, 128, 128, 0.014);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.26);
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .team-card img {
+      width: 260px;
+      height: 280px;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: contain;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .team-info {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .team-info h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.4rem;
+    }
+
+    .role {
+      color: #777;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+
+    @media(max-width:700px) {
+      .team-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .team-info {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <nav class="navbar">
+    <div class="logo">ARUK</div>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Collections</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav> -->
+
+  <header>
+
+    <nav class="main-navbar">
+      <div class="logo">
+        <img src="./assets/Main-logo.png" height="120px" width="100%" style="padding: 18px 40px;" alt="Logo"
+          title="Logo">
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-center-1" id="navMenu-1">
+        <li><a href="#">Home</a></li>
+
+        <li class="has-dropdown-1">
+          <a href="#">Pages</a>
+          <div class="dropdown-1">
+            <a href="./About.html">About Us</a>
+            <a href="#">Services</a>
+            <a href="#">FAQ</a>
+            <a href="#">Pricing</a>
+            <a href="#">Team</a>
+            <a href="#">Careers</a>
+          </div>
+        </li>
+
+        <!-- Restored Collections -->
+        <li class="has-dropdown-1">
+          <a href="#">Collections</a>
+          <div class="dropdown-1">
+            <a href="#">New Arrivals</a>
+            <a href="#">Best Sellers</a>
+            <a href="#">Trending</a>
+            <a href="#">Seasonal</a>
+            <a href="#">Limited Edition</a>
+            <a href="#">Sale</a>
+          </div>
+        </li>
+
+        <!-- Shop for product categories -->
+        <li class="has-dropdown-1">
+          <a href="#">Shop</a>
+          <div class="dropdown-1">
+            <a href="./Men.html">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Shoes</a>
+            <a href="#">Bags</a>
+            <a href="#">Accessories</a>
+            <a href="#">Watches</a>
+            <a href="#">Furniture</a>
+          </div>
+        </li>
+
+        <li><a href="#">Contacts</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#" class="icon-link" title="Login">
+          <i class="fas fa-sign-in-alt"></i>
+          <span>Login</span>
+        </a>
+
+        <a href="#" class="icon-link" title="Sign Up">
+          <i class="fas fa-user-plus"></i>
+          <span>Sign Up</span>
+        </a>
+
+        <a href="#" class="icon-link" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span>Cart</span>
+        </a>
+
+        <a href="#" class="icon-link" title="Wishlist">
+          <i class="fas fa-heart"></i>
+          <span>Wishlist</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+
+  <main>
+
+    <section class="section row">
+
+      <div class="col-lg-6">
+
+        <h1>About LUXE</h1>
+
+        <p class="about-text">
+          LUXE is dedicated to delivering high‑quality products including stylish bags, modern electronics, and
+          comfortable footwear. Our mission is to make premium products accessible while providing an exceptional
+          shopping
+          experience for every customer.
+          <br><br>
+          What started as a simple vision has grown into a trusted online destination where quality meets affordability.
+          We believe shopping should be easy, enjoyable, and reliable — which is why every product on our platform is
+          carefully selected to meet high standards.
+          <br><br>
+          Built on innovation and customer satisfaction, we continue to grow with a passionate team committed to
+          excellence across multiple product categories.
+        </p>
+
+      </div>
+
+      <div class="col-lg-6">
+        <img src="./assets/About Us Image.png" width="100%" height="400px" style="border-radius: 10px;" alt="About Us">
+      </div>
+
+    </section>
+
+    <section class="section row" style="background:white;">
+
+      <div class="col-lg-6">
+        <img src="./assets/Why-shop-with-us.png" width="100%" height="420px" style="border-radius: 10px;"
+          alt="About Us">
+      </div>
+
+      <div class="col-lg-6">
+
+        <h2>Why Shop With Us?</h2>
+
+        <p class="about-text">
+          ✔ <strong>Premium Quality:</strong> We partner with trusted manufacturers to ensure every item meets strict
+          quality standards.
+          <br><br>
+          ✔ <strong>Affordable Prices:</strong> Great products shouldn't come with extreme price tags — we work hard to
+          keep
+          our pricing competitive.
+          <br><br>
+          ✔ <strong>Fast & Reliable Delivery:</strong> Our logistics network ensures your orders arrive safely and on
+          time.
+          <br><br>
+          ✔ <strong>Secure Shopping:</strong> Your privacy and security are our priority, giving you peace of mind with
+          every purchase.
+          <br><br>
+          ✔ <strong>Customer‑Focused Service:</strong> Our support team is always ready to help, making your experience
+          smooth from browsing to checkout.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="section row">
+
+      <div class="col-lg-6">
+
+        <h2>Our Vision</h2>
+
+        <p class="about-text">
+          Our vision is to become a leading global e‑commerce brand known for reliability, innovation, and customer
+          satisfaction. We aim to continuously expand our product range while maintaining the trust our customers place
+          in
+          us.
+          <br><br>
+          By combining technology with thoughtful service, (ARUK) strives to redefine online shopping for modern
+          consumers.
+          We are committed to creating a seamless, enjoyable, and secure shopping experience that keeps our customers
+          coming
+          back for more.
+          We envision a future where (ARUK) is synonymous with quality, value, and exceptional service in the world of
+          online retail.
+        </p>
+
+      </div>
+
+      <div class="col-lg-6">
+        <img src="./assets/Our-Vision.png" width="109%" height="420px" style="border-radius: 10px;" alt="About Us">
+      </div>
+
+    </section>
+
+    <section class="section row" style="background:white;">
+
+      <div class="col-lg-6">
+        <img src="./assets/Our-core -values.png" width="105%" height="420px" style="border-radius: 10px;"
+          alt="Our Core Values">
+      </div>
+
+      <div class="col-lg-6">
+
+        <h2>Our Core Values</h2>
+
+        <p class="about-text">
+
+          <strong>Integrity:</strong> We operate with honesty and transparency in everything we do.
+          <br><br>
+          <strong>Innovation:</strong> We embrace new ideas and technologies to improve the shopping experience.
+          <br><br>
+          <strong>Customer Commitment:</strong> Your satisfaction drives our decisions.
+          <br><br>
+          <strong>Excellence:</strong> From product selection to delivery, we aim for the highest standards.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="our-team section">
+
+      <h2>Meet Our Team</h2>
+
+      <div class="team-container row">
+
+        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+          <img src="./assets/Davidson James.png" width="100px" height="50%" alt="CEO">
+          <div class="team-info">
+            <h3>Davidson James</h3>
+            <p class="role">Chief Executive Officer</p>
+            <p>Leads the company vision and ensures ARUK continues to innovate in the retail industry.</p>
+          </div>
+        </div>
+
+        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+          <img src="https://via.placeholder.com/160" alt="CTO">
+          <div class="team-info">
+            <h3>Sarah Cole</h3>
+            <p class="role">Chief Technology Officer</p>
+            <p>Oversees the platform and builds seamless digital shopping experiences.</p>
+          </div>
+        </div>
+
+        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+          <img src="https://via.placeholder.com/160" alt="Lead Designer">
+          <div class="team-info">
+            <h3>Michael Reed</h3>
+            <p class="role">Customer Support Specialist</p>
+            <p>Provides timely assistance to customers, resolves issues efficiently, and helps ensure every shopper
+              enjoys
+              a smooth and satisfying experience.</p>
+          </div>
+        </div>
+
+        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+          <img src="https://via.placeholder.com/160" alt="Head of Marketing">
+          <div class="team-info">
+            <h3>Angela Brooks</h3>
+            <p class="role">Head of Marketing</p>
+            <p>Drives brand growth through creative campaigns and customer engagement.</p>
+          </div>
+        </div>
+
+        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+          <img src="https://via.placeholder.com/160" alt="Executive Director">
+          <div class="team-info">
+            <h3>Daniel Foster</h3>
+            <p class="role">Executive Director</p>
+            <p>Coordinates strategic initiatives and ensures operational excellence across departments.</p>
+          </div>
+        </div>
+
+        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+          <img src="https://via.placeholder.com/160" alt="Operations Manager">
+          <div class="team-info">
+            <h3>Rachel Green</h3>
+            <p class="role">Operations Manager</p>
+            <p>Ensures smooth logistics, fast delivery, and reliable service for every order.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="lux-footer">
+
+    <div class="footer-container">
+
+      <!-- Brand -->
+      <div class="footer-col brand-col">
+
+        <img src="./assets/Main-logo.png" alt="LUXE Logo" class="footer-logo">
+
+        <p class="footer-description">
+          Elevating your lifestyle with premium collections,
+          timeless fashion, and modern elegance.
+        </p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+
+
+      <!-- Shop -->
+      <div class="footer-col">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Watches</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Support -->
+      <div class="footer-col">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Newsletter -->
+      <div class="footer-col newsletter">
+        <h3>Newsletter</h3>
+        <p>Subscribe for exclusive updates.</p>
+        <form>
+          <input type="email" placeholder="Enter your email">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+
+    </div>
+
+
+    <!-- Payments -->
+    <div class="payment-section">
+
+      <div class="gold-separator"></div>
+
+      <h4>We Accept</h4>
+
+      <div class="payment-icons">
+
+        <div class="payment-card visa"><i class="fab fa-cc-visa"></i></div>
+        <div class="payment-card mastercard"><i class="fab fa-cc-mastercard"></i></div>
+        <div class="payment-card amex"><i class="fab fa-cc-amex"></i></div>
+        <div class="payment-card paypal"><i class="fab fa-cc-paypal"></i></div>
+        <div class="payment-card applepay"><i class="fab fa-cc-apple-pay"></i></div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      © 2026 LUXE. All Rights Reserved.
+    </div>
+
+  </footer>
+
+</body>
+
+</html>

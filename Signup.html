@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE Sign Up</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Style Sheet Link -->
+    <link rel="stylesheet" href="./style.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS Link -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fdfbf6, #f2ede3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: pageBlurIn 1s ease forwards;
+        }
+
+        @media(max-width:600px) {
+            .auth-card {
+                padding: 40px 25px;
+                border-radius: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+
+        <div class="auth-card">
+            <div class="logo">LUXE</div>
+
+            <div class="input-group">
+                <input type="text" required placeholder=" ">
+                <label>Full Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" required placeholder=" ">
+                <label>Email</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="signupPassword" required placeholder=" ">
+                <label>Password</label>
+                <i class="fa-solid fa-eye-slash eye-icon" onclick="togglePassword('signupPassword', this)"></i>
+            </div>
+            <div class="strength" id="strengthText"></div>
+
+            <div class="input-group">
+                <input type="password" id="confirmPassword" required placeholder=" ">
+                <label>Confirm Password</label>
+                <i class="fa-solid fa-eye-slash eye-icon" onclick="togglePassword('confirmPassword', this)"></i>
+            </div>
+
+            <div class="input-group">
+                <input type="date" required>
+                <label style="top:-9px;font-size:11px;color:#d4af37;">Date of Birth</label>
+            </div>
+
+            <div class="radio-group">
+                <label><input type="radio" name="gender"> Male</label>
+                <label><input type="radio" name="gender"> Female</label>
+                <label><input type="radio" name="gender"> Other</label>
+            </div>
+
+            <button class="auth-btn" onclick="validateSignup()">Create Account</button>
+
+            <button class="social-btn"><i class="fa-brands fa-google"></i> Sign up with Google</button>
+            <button class="social-btn"><i class="fa-brands fa-apple"></i> Sign up with Apple</button>
+            <button class="social-btn"><i class="fa-brands fa-instagram"></i> Sign up with Instagram</button>
+            <button class="social-btn"><i class="fa-brands fa-x-twitter"></i> Sign up with X</button>
+
+            <div style="text-align:center;margin-top:25px;font-size:14px;color:#777;">
+                Already have an account?
+                <a href="./login.html"
+                    style="color:#b9982e;font-weight:500;text-decoration:none;margin-left:6px;transition:0.3s;"
+                    onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='#b9982e'">Login</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function togglePassword(id, icon) {
+            const input = document.getElementById(id);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            }
+        }
+
+        const passwordInput = document.getElementById('signupPassword');
+        passwordInput.addEventListener('input', function () {
+            const val = passwordInput.value;
+            const strengthText = document.getElementById('strengthText');
+            let strength = 'Weak';
+            if (val.length > 8 && /[A-Z]/.test(val) && /[0-9]/.test(val)) strength = 'Strong';
+            else if (val.length >= 6) strength = 'Medium';
+            strengthText.innerText = 'Password Strength: ' + strength;
+        });
+
+        function validateSignup() {
+            const pass = document.getElementById('signupPassword').value;
+            const confirm = document.getElementById('confirmPassword').value;
+            if (pass !== confirm) {
+                alert('Passwords do not match');
+                return;
+            }
+            alert('Signup validation passed (Connect to backend).');
+        }
+    </script>
+
+</body>
+
+</html>
