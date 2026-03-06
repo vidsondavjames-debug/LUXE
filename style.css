@@ -935,15 +935,6 @@ body {
 
 /* Reset Password Styles */
 
-body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f8f5f0, #efe8dc);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
 .reset-card {
     width: 520px;
     max-width: 100%;
