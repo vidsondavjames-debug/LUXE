@@ -20,3 +20,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+const modal = document.getElementById("productModal");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const modalPrice = document.getElementById("modalPrice");
+
+document.querySelectorAll(".view-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        modal.style.display = "block";
+
+        modalImg.src = btn.dataset.img;
+        modalTitle.textContent = btn.dataset.title;
+        modalDesc.textContent = btn.dataset.desc;
+        modalPrice.textContent = btn.dataset.price;
+
+    });
+
+});
+
+document.querySelector(".close-modal").onclick = () => {
+    modal.style.display = "none";
+};
+
+document.querySelector(".modal-overlay").onclick = () => {
+    modal.style.display = "none";
+};
