@@ -1,3 +1,5 @@
+
+
 // DOM Ready
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.getElementById('hamburger');
@@ -20,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
 
 const modal = document.getElementById("productModal");
 const modalImg = document.getElementById("modalImg");
@@ -49,3 +52,6 @@ document.querySelector(".close-modal").onclick = () => {
 document.querySelector(".modal-overlay").onclick = () => {
     modal.style.display = "none";
 };
+
+AOS.init();
+

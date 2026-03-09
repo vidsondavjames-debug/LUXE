@@ -9,6 +9,8 @@ body {
     background: #f5f5f5;
 }
 
+/* Main Navigation Bar Styles */
+
 .main-navbar-1 {
     display: flex;
     align-items: center;
@@ -123,554 +125,116 @@ body {
     border: none;
 }
 
-
-/* Hero Section Styles */
-
-/* Hero Page - Luxury Shoes Section */
-
-.luxury-shoe {
-    height: 80vh;
-    margin: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.308)), linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.505)), linear-gradient(rgba(0, 0, 0, 0.533), rgba(0, 0, 0, 0.419)),
-        url(./assets/luxuryshoe1.jpg),
-        url(./assets/Luxury-shoe-f.jpg),
-        url(./assets/children-shoes.jpg);
-    background-size: 33.3% 100%, 33.3% 100%, 33.3% 100%;
-    background-repeat: no-repeat;
-    background-position: left, center, right;
-    color: white;
-    text-shadow: 9px 6px 4px rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.luxury-shoe-content-container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.luxury-shoe h1 {
-    font-size: 130px;
-    font-weight: 250;
-    text-transform: uppercase;
-}
-
-.luxury-shoe p {
-    font-size: 20px;
-    text-shadow: 15px 10px 4px rgba(0, 0, 0, 0.7);
-    line-height: 28px;
-    width: 900px;
-}
-
-.luxury-shoe button a {
-    text-decoration: none;
-    text-shadow: 9px 6px 4px rgba(0, 0, 0, 0.392);
-    color: black;
-}
-
-.luxury-shoe button {
-    background-color: beige;
-    border: none;
-    margin: 20px 0 0 0;
-    padding: 15px 24px;
-    box-shadow: 9px 6px 4px rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.luxury-shoe button:hover {
-    background-color: lightgray;
-}
-
-.luxury-shoe a:hover {
-    color: gray;
-}
-
-/* Hero Page - Luxury clothes Section */
-
-
-.luxury-clothing {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    margin: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.308)), linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.505)), linear-gradient(rgba(0, 0, 0, 0.533), rgba(0, 0, 0, 0.419)),
-        url(./assets/Luxury\ Clothes\(1\).jpg),
-        url(./assets/luxury\ Clothe\(2\).jpg),
-        url(./assets/Luxury\ Clothes.jpg);
-    background-size: 33.3% 100%, 33.3% 100%, 33.3% 100%;
-    background-repeat: no-repeat;
-    background-position: left, center, right;
-    color: white;
-    text-shadow: 9px 6px 4px rgba(0, 0, 0, 0.7);
-
-}
-
-/* .luxury-clothing-content-container {
-   max-width: 900px;
-    justify-self: center;
-} */
-
-.luxury-clothing h1 {
-    font-size: 130px;
-    font-weight: 250;
-    text-transform: uppercase;
-}
-
-.luxury-clothing p {
-    margin: auto;
-    text-align: center;
-    font-size: 20px;
-    text-shadow: 15px 10px 4px rgba(0, 0, 0, 0.7);
-    line-height: 28px;
-    width: 80%;
-}
-
-.luxury-clothing button a {
-    text-decoration: none;
-    text-shadow: 9px 6px 4px rgba(0, 0, 0, 0.392);
-    color: black;
-}
-
-.luxury-clothing button {
-    background-color: beige;
-    border: none;
-    margin: 20px 0 0 0;
-    padding: 15px 24px;
-    box-shadow: 9px 6px 4px rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.luxury-clothing button:hover {
-    background-color: lightgray;
-}
-
-.luxury-clothing a:hover {
-    color: gray;
-}
-
-/* Hero Page - Luxury Watches Section */
-
-
-.luxury-watches {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    margin: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.308)), linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.505)), linear-gradient(rgba(0, 0, 0, 0.533), rgba(0, 0, 0, 0.419)),
-        url(./watches/luxury-watches-1.jpg),
-        url(./watches/luxury-watches-2.jpg),
-        url(./watches/luxury-watches-3.jpg);
-    background-size: 33.3% 100%, 33.3% 100%, 33.3% 100%;
-    background-repeat: no-repeat;
-    background-position: left, center, right;
-    color: white;
-    text-shadow: 9px 6px 4px rgba(0, 0, 0, 0.7);
-
-}
-
-.luxury-watches h1 {
-    font-size: 130px;
-    font-weight: 250;
-    text-transform: uppercase;
-}
-
-.luxury-watches p {
-    margin: auto;
-    text-align: center;
-    font-size: 20px;
-    text-shadow: 15px 10px 4px rgba(0, 0, 0, 0.7);
-    line-height: 28px;
-    width: 80%;
-}
-
-.luxury-watches button a {
-    text-decoration: none;
-    text-shadow: 9px 6px 4px rgba(0, 0, 0, 0.392);
-    color: black;
-}
-
-.luxury-watches button {
-    background-color: beige;
-    border: none;
-    margin: 20px 0 0 0;
-    padding: 15px 24px;
-    box-shadow: 9px 6px 4px rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.luxury-watches button:hover {
-    background-color: lightgray;
-}
-
-.luxury-watches a:hover {
-    color: gray;
-}
-
-/* Hero Page - Luxury Accessories Section */
-
-
-.luxury-accessories {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    margin: 0;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.800), rgba(0, 0, 0, 0.308)), linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.505)), linear-gradient(rgba(0, 0, 0, 0.533), rgba(0, 0, 0, 0.419)),
-        url(./accessories/Luxury-Glasses\(2\).jpg),
-        url(./accessories/Luxury-Necklace\(1\).jpg),
-        url(./accessories/Luxury-Bracelets\(1\).jpg);
-    background-size: 33.3% 100%, 33.3% 100%, 33.3% 100%;
-    background-repeat: no-repeat;
-    background-position: left, center, right;
-    color: white;
-    text-shadow: 9px 6px 4px rgba(0, 0, 0, 0.7);
-
-}
-
-.luxury-accessories h1 {
-    font-size: 130px;
-    font-weight: 250;
-    text-transform: uppercase;
-}
-
-.luxury-accessories p {
-    margin: auto;
-    text-align: center;
-    font-size: 20px;
-    text-shadow: 15px 10px 4px rgba(0, 0, 0, 0.7);
-    line-height: 28px;
-    width: 90%;
-}
-
-.luxury-accessories button a {
-    text-decoration: none;
-    text-shadow: 9px 6px 4px rgba(0, 0, 0, 0.392);
-    color: black;
-}
-
-.luxury-accessories button {
-    background-color: beige;
-    border: none;
-    margin: 30px 0 0 0;
-    padding: 15px 24px;
-    box-shadow: 9px 6px 4px rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.luxury-accessories button:hover {
-    background-color: lightgray;
-}
-
-.luxury-accessories a:hover {
-    color: gray;
-}
-
-/* Hero Page About Section */
-
-.about-section {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assets/About-image.png);
-    background-size: cover;
-    height: 520px;
-}
-
-.about-section-2 {
-    color: rgba(255, 255, 255, 0.916);
-    text-align: center;
-    margin: 20px 250px 0 300px;
-}
-
-.about-section-1 {
-    color: rgba(245, 245, 245, 0.786);
-    text-align: center;
-    padding: 40px 0 0 0;
-}
-
-.about-section a {
-    text-decoration: none;
-    width: 13%;
-    font-size: 20px;
-    font-weight: 500;
-    box-shadow: -5px 5px 10px 5px grey;
-    margin: 20px 100px 0 665px;
-    color: black;
-    background-color: rgba(240, 255, 255, 0.929);
-}
-
-.about-section a:hover {
-    color: gray;
-}
-
-/*Sales Page - Luxury Sales Section */
+/* END OF NAVIGATION BAR STYLES */
+/* LUXURY SALES GRID */
 
 .luxury-sales-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
 }
+
+
+/* CARD */
 
 .luxury-sales-card {
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    padding: 15px;
-    cursor: pointer;
-    transition: 0.3s ease;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: all .35s ease;
 }
 
-.luxury-sales-card:hover {
-    transform: translateY(-8px);
-}
+
+/* IMAGE */
 
 .luxury-sales-card img {
     width: 100%;
-    height: 250px;
+    height: 260px;
     object-fit: cover;
-    border-radius: 8px;
+    transition: transform .6s ease;
 }
 
-.luxury-sales-card h6 {
+
+/* CARD CONTENT */
+
+.luxury-sales-card div:nth-child(2) {
+    padding: 18px 15px;
     text-align: center;
-    font-size: 20px;
-    margin-top: 10px;
 }
+
+
+/* CATEGORY TEXT */
 
 .luxury-sales-card span {
-    display: block;
-    text-align: center;
-    font-size: 13px;
-    color: gray;
-}
-
-/* FOOTER DESIGN */
-/* ===============================
-   LUXURY FOOTER
-=============================== */
-
-.lux-footer {
-    background: #0f0f0f;
-    color: #ddd;
-    padding-top: 70px;
-    font-family: 'Poppins', sans-serif;
-    width: 100%;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #888;
+    text-transform: uppercase;
 }
 
 
-/* GRID */
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 60px;
-    padding: 0 40px 60px;
-}
+/* TITLE */
 
-
-/* LOGO */
-.footer-logo {
-    width: 180px;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.3));
-}
-
-
-/* TEXT */
-.footer-description {
-    font-size: 0.9rem;
-    color: #aaa;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-
-/* LINKS */
-.footer-col h3 {
-    color: #fff;
-    font-size: 1rem;
-    margin-bottom: 18px;
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 12px;
-}
-
-.footer-col ul li a {
-    text-decoration: none;
-    color: #bbb;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.footer-col ul li a:hover {
-    color: #d4af37;
-    padding-left: 5px;
-}
-
-
-/* SOCIAL ICONS */
-.social-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.social-icons a {
-    color: #bbb;
-    font-size: 1rem;
-    transition: 0.3s;
-}
-
-.social-icons a:hover {
-    color: #d4af37;
-}
-
-
-/* NEWSLETTER */
-.newsletter p {
+.luxury-sales-card h6 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 8px;
     margin-bottom: 10px;
 }
 
-.newsletter form {
-    display: flex;
-    gap: 10px;
-}
+/* BUTTON */
 
-.newsletter input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    min-width: 0;
-}
-
-.newsletter button {
+.view-btn {
     padding: 10px 18px;
     border: none;
-    background: #d4af37;
-    color: #000;
-    font-weight: 500;
-    border-radius: 4px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #d4af37, #f5e6a5);
+    font-size: 13px;
     cursor: pointer;
-    white-space: nowrap;
+    transition: .3s;
 }
 
-.newsletter button:hover {
-    background: #c19b2f;
+/* BUTTON HOVER */
+
+.view-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.35);
 }
 
+/* CARD HOVER EFFECT */
 
-/* GOLD LINE */
-.gold-separator {
-    height: 1px;
-    width: 80%;
-    margin: 0 auto 30px;
-    background: linear-gradient(to right, transparent, #d4af37, transparent);
+.luxury-sales-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
 }
 
+/* IMAGE ZOOM HOVER */
 
-/* PAYMENT */
-.payment-section {
-    text-align: center;
-    padding: 40px 20px 30px;
+.luxury-sales-card:hover img {
+    transform: scale(1.08);
 }
 
-.payment-section h4 {
-    color: #aaa;
-    font-size: 0.9rem;
-    margin-bottom: 25px;
+/* GOLD SHIMMER EFFECT */
+
+.luxury-sales-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 215, 0, .25), transparent);
+    transition: .7s;
 }
 
-.payment-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.luxury-sales-card:hover::before {
+    left: 100%;
 }
 
-
-/* GLASS CARDS */
-.payment-card {
-    width: 70px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: 0.3s;
-}
-
-.payment-card i {
-    font-size: 2rem;
-    color: #bbb;
-}
-
-.payment-card:hover {
-    transform: translateY(-4px);
-    border: 1px solid rgba(212, 175, 55, 0.6);
-}
-
-
-/* BRAND COLORS */
-.visa:hover i {
-    color: #1a1f71;
-}
-
-.mastercard:hover i {
-    color: #eb001b;
-}
-
-.amex:hover i {
-    color: #2e77bb;
-}
-
-.paypal:hover i {
-    color: #003087;
-}
-
-.applepay:hover i {
-    color: #fff;
-}
-
-
-/* BOTTOM */
-.footer-bottom {
-    border-top: 1px solid #222;
-    text-align: center;
-    padding: 20px 15px;
-    color: #777;
-    font-size: 0.85rem;
-}
-
-/* Sales card animation */
+/* SALES CARDS POPUP ANIMATION */
 
 /* MODAL BACKGROUND */
 .product-modal {
@@ -777,6 +341,223 @@ body {
         transform: translateY(0);
     }
 }
+
+
+/* END OF LUXURY SALES SECTION */
+
+
+/* FOOTER DESIGN */
+/* ===============================
+   LUXURY FOOTER
+=============================== */
+
+.lux-footer {
+    background: #0f0f0f;
+    color: #ddd;
+    padding-top: 70px;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+
+
+/* GRID */
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 60px;
+    padding: 0 40px 60px;
+}
+
+
+/* LOGO */
+.footer-logo {
+    width: 180px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.3));
+}
+
+
+/* TEXT */
+.footer-description {
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+/* LINKS */
+.footer-col h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #bbb;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #d4af37;
+    padding-left: 5px;
+}
+
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #bbb;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #d4af37;
+}
+
+
+/* NEWSLETTER */
+.newsletter p {
+    margin-bottom: 10px;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 15px;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    min-width: 0;
+}
+
+.newsletter button {
+    padding: 10px 18px;
+    border: none;
+    background: #d4af37;
+    color: #000;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.newsletter button:hover {
+    background: #c19b2f;
+}
+
+
+/* GOLD LINE */
+.gold-separator {
+    height: 1px;
+    width: 80%;
+    margin: 0 auto 30px;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+}
+
+
+/* PAYMENT */
+.payment-section {
+    text-align: center;
+    padding: 40px 20px 30px;
+}
+
+.payment-section h4 {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+}
+
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+
+/* GLASS CARDS */
+.payment-card {
+    width: 80px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: 0.3s;
+}
+
+.payment-card i {
+    font-size: 2.5rem;
+    color: #bbb;
+}
+
+.payment-card:hover {
+    transform: translateY(-4px);
+    border: 1px solid rgba(212, 175, 55, 0.6);
+}
+
+
+/* BRAND COLORS */
+.visa:hover i {
+    color: #1a1f71;
+}
+
+.mastercard:hover i {
+    color: #eb001b;
+}
+
+.amex:hover i {
+    color: #2e77bb;
+}
+
+.paypal:hover i {
+    color: #003087;
+}
+
+.applepay:hover i {
+    color: #fff;
+}
+
+/* BOTTOM */
+.footer-bottom {
+    border-top: 1px solid #222;
+    text-align: center;
+    padding: 20px 15px;
+    color: #777;
+    font-size: 0.85rem;
+}
+
+/* End of Footer Styles */
 
 /* Signup Styles */
 
@@ -1213,6 +994,14 @@ body {
 RESPONSIVE
 ========================= */
 
+/* LARGE TABLETS */
+
+@media(max-width:1200px) {
+    .luxury-sales-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 992px) {
 
     .footer-container {
@@ -1224,6 +1013,14 @@ RESPONSIVE
         width: 150px;
     }
 
+}
+
+/* TABLETS */
+
+@media(max-width:900px) {
+    .luxury-sales-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media screen and (max-width: 855px) {
@@ -1354,7 +1151,7 @@ RESPONSIVE
     }
 
     .payment-icons {
-        gap: 15px;
+        gap: 45px;
     }
 
     .payment-card {
@@ -1366,4 +1163,15 @@ RESPONSIVE
         font-size: 1.6rem;
     }
 
+}
+
+@media(max-width:500px) {
+    .luxury-sales-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .luxury-sales-card img {
+        height: 220px;
+    }
 }
