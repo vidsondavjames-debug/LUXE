@@ -1,6 +1,8 @@
 
 
 // DOM Ready
+// Handles hamburger menu
+
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu-1');
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Product Modal Logic
 
 const modal = document.getElementById("productModal");
 const modalImg = document.getElementById("modalImg");
@@ -53,5 +56,16 @@ document.querySelector(".modal-overlay").onclick = () => {
     modal.style.display = "none";
 };
 
-AOS.init();
 
+// Password visibility toggle
+
+function togglePassword(id, icon) {
+    const input = document.getElementById(id);
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.replace('fa-eye-slash', 'fa-eye');
+    } else {
+        input.type = 'password';
+        icon.classList.replace('fa-eye', 'fa-eye-slash');
+    }
+}

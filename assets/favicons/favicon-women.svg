@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
+  <defs>
+    <linearGradient id="gwom" x1="0" x2="1">
+      <stop offset="0%" stop-color="#FFF6E6"/>
+      <stop offset="70%" stop-color="#FFD54A"/>
+      <stop offset="100%" stop-color="#C89B2B"/>
+    </linearGradient>
+    <filter id="gloww" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="bb"/>
+      <feMerge><feMergeNode in="bb"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g fill="none" stroke="url(#gwom)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#gloww)">
+    <circle cx="32" cy="18" r="8"/>
+    <path d="M20 34 C24 30, 40 30, 44 34 L36 50 L28 50 Z"/>
+  </g>
+</svg>

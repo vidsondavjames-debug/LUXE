@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
+  <defs>
+    <linearGradient id="gabout" x1="0" x2="1">
+      <stop offset="0%" stop-color="#FFF7D9"/>
+      <stop offset="60%" stop-color="#FFD54A"/>
+      <stop offset="100%" stop-color="#C89B2B"/>
+    </linearGradient>
+    <filter id="glowa" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="ab"/>
+      <feMerge><feMergeNode in="ab"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="none"/>
+  <g fill="none" stroke="url(#gabout)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowa)">
+    <circle cx="32" cy="32" r="20"/>
+    <path d="M32 26 C32 26, 32 34, 32 38"/>
+    <circle cx="32" cy="20" r="2" fill="#FFD54A" stroke="none"/>
+  </g>
+  <g fill="#FFF6D6" opacity="0.12">
+    <circle cx="24" cy="22" r="1.4"/>
+  </g>
+</svg>

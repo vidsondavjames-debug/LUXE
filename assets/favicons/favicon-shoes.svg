@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
+  <defs>
+    <linearGradient id="gshoe" x1="0" x2="1">
+      <stop offset="0%" stop-color="#FFF7D9"/>
+      <stop offset="60%" stop-color="#FFD54A"/>
+      <stop offset="100%" stop-color="#C89B2B"/>
+    </linearGradient>
+    <filter id="glowsh" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="s"/>
+      <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g fill="none" stroke="url(#gshoe)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowsh)">
+    <path d="M12 36 C18 28, 28 26, 38 28 C48 30, 56 34, 52 40 C48 46, 20 46, 12 40 Z"/>
+    <path d="M20 30 L28 22"/>
+  </g>
+</svg>

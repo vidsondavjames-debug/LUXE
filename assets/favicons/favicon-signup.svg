@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
+  <defs>
+    <linearGradient id="gsu" x1="0" x2="1">
+      <stop offset="0%" stop-color="#FFF7D9"/>
+      <stop offset="60%" stop-color="#FFD54A"/>
+      <stop offset="100%" stop-color="#C89B2B"/>
+    </linearGradient>
+    <filter id="glowsu" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="su"/>
+      <feMerge><feMergeNode in="su"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="none"/>
+  <g fill="none" stroke="url(#gsu)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#glowsu)">
+    <circle cx="32" cy="20" r="8"/>
+    <path d="M14 44 C14 36, 22 30, 32 30 C42 30, 50 36, 50 44"/>
+    <path d="M48 12 L56 12" stroke-width="2"/>
+    <path d="M52 8 L52 16" stroke-width="2"/>
+  </g>
+  <g fill="#FFF6D6" opacity="0.12">
+    <circle cx="38" cy="14" r="1.4"/>
+  </g>
+</svg>
