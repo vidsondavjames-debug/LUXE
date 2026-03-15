@@ -137,7 +137,27 @@
       font-weight: 600;
     }
 
+    @media(max-width:992px) {
+
+      #core-values-image {
+        order: 2;
+      }
+
+      #core-values-image-1 {
+        order: 1;
+      }
+
+      #why-shop-with-us-image-1 {
+        order: 1;
+      }
+      #why-shop-with-us-image {
+        order: 2;
+      }
+      
+    }
+
     @media(max-width:700px) {
+
       .team-card {
         flex-direction: column;
         text-align: center;
@@ -146,6 +166,22 @@
       .team-info {
         text-align: center;
       }
+
+      #core-values-image {
+        order: 2;
+      }
+
+      #core-values-image-1 {
+        order: 1;
+      }
+
+      #why-shop-with-us-image {
+        order: 2;
+      }
+      #why-shop-with-us-image-1 {
+        order: 1;
+      }
+
     }
   </style>
 </head>
@@ -236,7 +272,7 @@
 
     <section class="section row">
 
-      <div class="col-lg-6">
+      <div class="col-lg-6 col-md-12 col-sm-12" id="about-image-1">
 
         <h1>About LUXE</h1>
 
@@ -256,7 +292,7 @@
 
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6 col-md-12 col-sm-12" id="about-image">
         <img src="./assets/About Us Image.webp" width="100%" height="400px" style="border-radius: 10px;" alt="About Us">
       </div>
 
@@ -264,12 +300,12 @@
 
     <section class="section row" style="background:white;">
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="why-shop-with-us-image">
         <img src="./assets/Why-shop-with-us.webp" width="100%" height="420px" style="border-radius: 10px;"
           alt="About Us">
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="why-shop-with-us-image-1">
 
         <h2>Why Shop With Us?</h2>
 
@@ -297,7 +333,7 @@
 
     <section class="section row">
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="our-vision-image-1">
 
         <h2>Our Vision</h2>
 
@@ -318,7 +354,7 @@
 
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="our-vision-image">
         <img src="./assets/Our-Vision.webp" width="109%" height="420px" style="border-radius: 10px;" alt="About Us">
       </div>
 
@@ -326,12 +362,12 @@
 
     <section class="section row" style="background:white;">
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="core-values-image">
         <img src="./assets/Our-core -values.webp" width="105%" height="420px" style="border-radius: 10px;"
           alt="Our Core Values">
       </div>
 
-      <div class="col-lg-6">
+      <div class="col-lg-6" id="core-values-image-1">
 
         <h2>Our Core Values</h2>
 
