@@ -327,6 +327,7 @@ body {
     right: 20px;
     font-size: 22px;
     cursor: pointer;
+    color: rgba(255, 255, 255, 0.812);
 }
 
 /* ANIMATION */
@@ -1024,6 +1025,7 @@ RESPONSIVE
 }
 
 @media screen and (max-width: 855px) {
+    
     .main-navbar-1 {
         padding: 0 20px;
     }

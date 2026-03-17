@@ -17,6 +17,9 @@
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicons/Home-favicon.png">
+
     <title>LUXE Homepage Preview</title>
 
     <style>
@@ -50,7 +53,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.4));
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -203,7 +209,7 @@
         @media (max-width:576px) {
 
             .lux-hero {
-                height: 80vh;
+                height: 100vh;
             }
 
             .lux-overlay h1 {
@@ -219,6 +225,7 @@
                 font-size: 0.9rem;
             }
 
+            /* 
             .footer-container {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -226,7 +233,7 @@
 
             .social-icons {
                 justify-content: center;
-            }
+            } */
 
         }
     </style>
@@ -312,94 +319,94 @@
         </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="lux-hero">
-        <video autoplay muted loop>
-            <source
-                src="https://assets.mixkit.co/videos/preview/mixkit-woman-walking-in-a-luxury-hotel-lobby-4217-large.mp4"
-                type="video/mp4">
-        </video>
-        <div class="lux-overlay">
-            <div data-aos="fade-right" data-aos-duration="1500">
-                <h1>WELCOME TO LUXE</h1>
+    <main>
+        <!-- HERO -->
+        <section class="lux-hero">
+            <video autoplay muted loop playsinline>
+                <source src="./assets/Luxury-Hero-Video.mp4" type="video/mp4">
+            </video>
+            <div class="lux-overlay">
+                <div data-aos="fade-right" data-aos-duration="1500">
+                    <h1>WELCOME TO LUXE</h1>
+                </div>
+                <p data-aos="fade-left" data-aos-duration="2000">Luxury Fashion. Timeless Elegance.</p>
+                <a href="#men-section" class="lux-cta" data-aos="fade-up-right" data-aos-duration="2500">Explore
+                    Collections</a>
             </div>
-            <p data-aos="fade-left" data-aos-duration="2000">Luxury Fashion. Timeless Elegance.</p>
-            <a href="#men-section" class="lux-cta" data-aos="fade-up-right" data-aos-duration="2500">Explore
-                Collections</a>
-        </div>
-    </section>
+        </section>
 
-    <!-- MEN -->
-    <section class="lux-row row" id="men-section">
-        <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-            style="background-image:url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd53'); width: 100% ;">
-        </div>
-        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-            <h2>Men's Collection</h2>
-            <p>Premium menswear crafted for confidence and prestige.</p>
-            <a href="./Men.html" class="lux-btn">Shop Now</a>
-        </div>
-    </section>
+        <!-- MEN -->
+        <section class="lux-row row" id="men-section">
+            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
+                style="background-image:url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd53'); width: 100% ;">
+            </div>
+            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+                <h2>Men's Collection</h2>
+                <p>Premium menswear crafted for confidence and prestige.</p>
+                <a href="./Men.html" class="lux-btn">Shop Now</a>
+            </div>
+        </section>
 
-    <!-- WOMEN -->
-    <section class="lux-row reverse row">
-        <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-            style="background-image:url('https://images.unsplash.com/photo-1520975916090-3105956dac38'); width: 100% ;">
-        </div>
-        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-            <h2>Women's Collection</h2>
-            <p>Elegant, graceful and modern luxury fashion.</p>
-            <a href="./Women.html" class="lux-btn">Shop Now</a>
-        </div>
-    </section>
+        <!-- WOMEN -->
+        <section class="lux-row reverse row">
+            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
+                style="background-image:url('https://images.unsplash.com/photo-1520975916090-3105956dac38'); width: 100% ;">
+            </div>
+            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+                <h2>Women's Collection</h2>
+                <p>Elegant, graceful and modern luxury fashion.</p>
+                <a href="./Women.html" class="lux-btn">Shop Now</a>
+            </div>
+        </section>
 
-    <!-- SHOES -->
-    <section class="lux-row row">
-        <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-            style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff'); width: 100% ;">
-        </div>
-        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-            <h2>Shoes</h2>
-            <p>Luxury footwear built for comfort and status.</p>
-            <a href="./Shoes.html" class="lux-btn">Shop Now</a>
-        </div>
-    </section>
+        <!-- SHOES -->
+        <section class="lux-row row">
+            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
+                style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff'); width: 100% ;">
+            </div>
+            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+                <h2>Shoes</h2>
+                <p>Luxury footwear built for comfort and status.</p>
+                <a href="./Shoes.html" class="lux-btn">Shop Now</a>
+            </div>
+        </section>
 
-    <!-- BAGS -->
-    <section class="lux-row reverse row">
-        <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-            style="background-image:url('https://images.unsplash.com/photo-1584917865442-de89df76afd3'); width: 100% ;">
-        </div>
-        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-            <h2>Bags</h2>
-            <p>Iconic designer bags for everyday luxury.</p>
-            <a href="./Bags.html" class="lux-btn">Shop Now</a>
-        </div>
-    </section>
+        <!-- BAGS -->
+        <section class="lux-row reverse row">
+            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
+                style="background-image:url('https://images.unsplash.com/photo-1584917865442-de89df76afd3'); width: 100% ;">
+            </div>
+            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+                <h2>Bags</h2>
+                <p>Iconic designer bags for everyday luxury.</p>
+                <a href="./Bags.html" class="lux-btn">Shop Now</a>
+            </div>
+        </section>
 
-    <!-- WATCHES -->
-    <section class="lux-row row">
-        <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-            style="background-image:url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d'); width: 100% ;">
-        </div>
-        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-            <h2>Watches</h2>
-            <p>Timeless watches designed for distinction.</p>
-            <a href="./Watches.html" class="lux-btn">Shop Now</a>
-        </div>
-    </section>
+        <!-- WATCHES -->
+        <section class="lux-row row">
+            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
+                style="background-image:url('https://images.unsplash.com/photo-1518546305927-5a555bb7020d'); width: 100% ;">
+            </div>
+            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+                <h2>Watches</h2>
+                <p>Timeless watches designed for distinction.</p>
+                <a href="./Watches.html" class="lux-btn">Shop Now</a>
+            </div>
+        </section>
 
-    <!-- ACCESSORIES -->
-    <section class="lux-row reverse row mb-2">
-        <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-            style="background-image:url('https://images.unsplash.com/photo-1605100804763-247f67b3557e'); width: 100% ;">
-        </div>
-        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-            <h2>Accessories</h2>
-            <p>Luxury rings, necklaces and finishing touches.</p>
-            <a href="./Accessories.html" class="lux-btn">Shop Now</a>
-        </div>
-    </section>
+        <!-- ACCESSORIES -->
+        <section class="lux-row reverse row mb-2">
+            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
+                style="background-image:url('https://images.unsplash.com/photo-1605100804763-247f67b3557e'); width: 100% ;">
+            </div>
+            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+                <h2>Accessories</h2>
+                <p>Luxury rings, necklaces and finishing touches.</p>
+                <a href="./Accessories.html" class="lux-btn">Shop Now</a>
+            </div>
+        </section>
+    </main>
 
     <footer class="lux-footer">
 
@@ -428,10 +435,10 @@
             <div class="footer-col">
                 <h3>Shop</h3>
                 <ul>
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Watches</a></li>
+                    <li><a href="./Men.html">Men</a></li>
+                    <li><a href="./Women.html">Women</a></li>
+                    <li><a href="./Accessories.html">Accessories</a></li>
+                    <li><a href="./Watches.html">Watches</a></li>
                     <li><a href="#">Sale</a></li>
                 </ul>
             </div>
@@ -492,7 +499,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="./script.js"></script>
-
 
     <script>
         AOS.init();
