@@ -10,7 +10,6 @@ body {
 }
 
 /* Main Navigation Bar Styles */
-
 .main-navbar-1 {
     display: flex;
     align-items: center;
@@ -18,19 +17,18 @@ body {
     padding: 0 40px;
     height: 70px;
     background: white;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    position: relative;
-    /* STATIC on all devices */
-    width: 100%;
-    z-index: 1000;
 }
 
+/* LOGO */
 .logo img {
-    height: 70px;
-    object-fit: contain;
+    height: 65px;
 }
 
-/* Center nav items */
+/* CENTER NAV */
 .nav-center-1 {
     display: flex;
     gap: 30px;
@@ -51,12 +49,12 @@ body {
     transition: color 0.2s;
 }
 
+/* GOLD HOVER */
 .nav-center-1 a:hover {
     color: gold;
-    /* GOLD on hover */
 }
 
-/* Dropdown menu */
+/* DROPDOWN (DESKTOP) */
 .dropdown-1 {
     position: absolute;
     top: 45px;
@@ -65,17 +63,18 @@ body {
     width: 200px;
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.25s ease;
+    display: none;
+    flex-direction: column;
     padding: 10px 0;
-    z-index: 10;
+}
+
+.has-dropdown-1:hover .dropdown-1 {
+    display: flex;
 }
 
 .dropdown-1 a {
     padding: 10px 20px;
-    transition: background 0.2s ease, color 0.2s;
+    transition: 0.2s;
 }
 
 .dropdown-1 a:hover {
@@ -83,13 +82,7 @@ body {
     color: gold;
 }
 
-.nav-center-1 li:hover .dropdown-1 {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Right icons */
+/* RIGHT ICONS */
 .nav-right-1 {
     display: flex;
     gap: 20px;
@@ -113,16 +106,19 @@ body {
 
 .icon-link:hover {
     color: gold;
-    /* GOLD on hover */
 }
 
-/* Hamburger button */
+.mobile-only {
+    display: none;
+}
+
+/* HAMBURGER */
 .hamburger {
     display: none;
     font-size: 1.5rem;
-    cursor: pointer;
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 /* END OF NAVIGATION BAR STYLES */
@@ -329,6 +325,11 @@ body {
     cursor: pointer;
     color: rgba(255, 255, 255, 0.812);
 }
+
+.close-modal:hover {
+    color: #fff;
+}
+
 
 /* ANIMATION */
 @keyframes fadeIn {
@@ -1025,11 +1026,20 @@ RESPONSIVE
 }
 
 @media screen and (max-width: 855px) {
-    
-    .main-navbar-1 {
-        padding: 0 20px;
+
+    .mobile-only {
+        display: block;
     }
 
+    .hamburger {
+        display: block;
+    }
+
+    .nav-right-1 {
+        display: none;
+    }
+
+    /* 
     .nav-center-1 {
         position: absolute;
         top: 70px;
@@ -1037,62 +1047,91 @@ RESPONSIVE
         width: 100%;
         background: white;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 0 20px;
-        gap: 5px;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.4s ease;
+
+        max-height: calc(100vh - 70px);
+         FULL SCREEN HEIGHT 
+        overflow-y: auto;
+         ENABLE SCROLL 
+
+        -webkit-overflow-scrolling: touch;
+         smooth scroll on mobile 
+
         border-top: 1px solid #eee;
+        scroll-behavior: smooth;
+        touch-action: pan-y;
+    } */
+    /* 
+    .nav-center-1.active {
+        max-height: 100vh;
+    } */
+
+    .nav-center-1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        /* FULL WIDTH NOW */
+
+        background: white;
+        flex-direction: column;
+        padding: 80px 20px;
+
+        transform: translateX(-100%);
+        transition: transform 0.35s ease;
+
+        overflow-y: auto;
+        z-index: 9999;
     }
 
     .nav-center-1.active {
-        max-height: 800px;
-        padding: 20px;
+        transform: translateX(0);
     }
 
     .nav-center-1 li {
         width: 100%;
+        border-bottom: 1px solid #eee;
     }
 
-    .nav-center-1 a {
-        width: 100%;
-        padding: 12px 0;
-    }
-
-    /* Smooth slide-down for mobile dropdowns */
+    /* FIXED DROPDOWN */
     .dropdown-1 {
-        position: relative;
-        box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-        width: 100%;
-        padding-left: 15px;
-        transition: max-height 0.4s ease, padding 0.4s ease;
+        position: static;
+        display: block;
         max-height: 0;
         overflow: hidden;
+        box-shadow: none;
+        transition: max-height 0.3s ease;
     }
 
-    .nav-center-1 li.open .dropdown-1 {
-        display: block;
+    .has-dropdown-1.open .dropdown-1 {
         max-height: 500px;
-        /* adjust based on content */
-        padding: 10px 0;
+        /* big enough */
     }
 
-    .nav-right-1 {
-        display: none;
+    .dropdown-1 a {
+        padding-left: 20px;
     }
 
-    .hamburger {
-        display: block;
+    .arrow {
+        float: right;
+        transition: transform 0.3s;
+    }
+
+    .has-dropdown-1.open .arrow {
+        transform: rotate(180deg);
     }
 }
 
 /* MOBILE */
 @media(max-width:768px) {
+
+    .modal-content {
+        max-height: 85vh;
+    }
+
+    .modal-body {
+        padding-bottom: 20px;
+    }
 
     .newsletter form {
         flex-direction: column;
@@ -1176,4 +1215,90 @@ RESPONSIVE
     .luxury-sales-card img {
         height: 220px;
     }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .modal-info h2 {
+        font-size: 18px;
+    }
+
+    .modal-info p {
+        font-size: 13px;
+    }
+
+    .modal-info h3 {
+        font-size: 16px;
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
+    }
+}
+
+
+/* ============================= */
+/* ✅ IMAGE HOVER ZOOM */
+/* ============================= */
+
+.modal-image {
+    overflow: hidden;
+}
+
+.modal-image img {
+    transition: transform 0.4s ease;
+}
+
+.modal-image:hover img {
+    transform: scale(1.1);
+}
+
+
+/* ============================= */
+/* ✅ ADD TO CART ANIMATION */
+/* ============================= */
+
+.add-to-cart-btn:active {
+    transform: scale(0.95);
+}
+
+.added-animation {
+    animation: popCart 0.4s ease;
+}
+
+@keyframes popCart {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*=============================*/
+/* ✅ MODAL SCROLL FIX */
+/* ============================= */
+
+.modal-content {
+    max-height: 90vh;
+    /* prevents overflow */
+    overflow-y: auto;
+    /* enables scroll */
+}
+
+
+/* Smooth scroll feel */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
 }

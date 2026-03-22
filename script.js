@@ -1,71 +1,76 @@
-
-
-// DOM Ready
-// Handles hamburger menu
-
 document.addEventListener('DOMContentLoaded', function () {
+
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('navMenu-1');
 
-    // Hamburger toggle
+    /* =============================
+       TOGGLE MENU (CLICK)
+    ============================== */
     hamburger.addEventListener('click', () => {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', String(!expanded));
         navMenu.classList.toggle('active');
+
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', !expanded);
     });
 
-    // Mobile dropdown toggle
+    /* =============================
+       MOBILE DROPDOWN
+    ============================== */
     document.querySelectorAll('.has-dropdown-1 > a').forEach(link => {
         link.addEventListener('click', e => {
+
             if (window.matchMedia('(max-width: 855px)').matches) {
                 e.preventDefault();
                 link.parentElement.classList.toggle('open');
             }
         });
     });
-});
 
-// Product Modal Logic
+    /* =============================
+       SWIPE TO CLOSE
+    ============================== */
+    let startX = 0;
+    let startY = 0;
 
-const modal = document.getElementById("productModal");
-const modalImg = document.getElementById("modalImg");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
-const modalPrice = document.getElementById("modalPrice");
+    navMenu.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    });
 
-document.querySelectorAll(".view-btn").forEach(btn => {
+    navMenu.addEventListener('touchend', (e) => {
+        let endX = e.changedTouches[0].clientX;
+        let endY = e.changedTouches[0].clientY;
 
-    btn.addEventListener("click", () => {
+        let diffX = startX - endX;
+        let diffY = startY - endY;
 
-        modal.style.display = "block";
+        if (diffX > 50 || diffY > 50) {
+            closeMenu();
+        }
+    });
 
-        modalImg.src = btn.dataset.img;
-        modalTitle.textContent = btn.dataset.title;
-        modalDesc.textContent = btn.dataset.desc;
-        modalPrice.textContent = btn.dataset.price;
+    function closeMenu() {
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
 
+    /* =============================
+       SWIPE FROM EDGE TO OPEN
+    ============================== */
+    let edgeStartX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+        edgeStartX = e.touches[0].clientX;
+    });
+
+    document.addEventListener('touchend', (e) => {
+        let endX = e.changedTouches[0].clientX;
+
+        // Swipe right from LEFT EDGE
+        if (edgeStartX < 30 && endX - edgeStartX > 70) {
+            navMenu.classList.add('active');
+            hamburger.setAttribute('aria-expanded', 'true');
+        }
     });
 
 });
-
-document.querySelector(".close-modal").onclick = () => {
-    modal.style.display = "none";
-};
-
-document.querySelector(".modal-overlay").onclick = () => {
-    modal.style.display = "none";
-};
-
-
-// Password visibility toggle
-
-function togglePassword(id, icon) {
-    const input = document.getElementById(id);
-    if (input.type === 'password') {
-        input.type = 'text';
-        icon.classList.replace('fa-eye-slash', 'fa-eye');
-    } else {
-        input.type = 'password';
-        icon.classList.replace('fa-eye', 'fa-eye-slash');
-    }
-}
