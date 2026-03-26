@@ -2,14 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: Arial, sans-serif; */
+    font-family: Arial, sans-serif;
 }
 
 body {
+    scroll-behavior: smooth;
     background: #f5f5f5;
 }
 
-/* Main Navigation Bar Styles */
+/* ===============================
+    MAIN NAVIGATION BAR 
+=============================== */
+
 .main-navbar-1 {
     display: flex;
     align-items: center;
@@ -121,8 +125,151 @@ body {
     cursor: pointer;
 }
 
-/* END OF NAVIGATION BAR STYLES */
-/* LUXURY SALES GRID */
+/* ========================================
+    END OF MAIN NAVIGATION BAR STYLES
+======================================== */
+
+/* ===============================
+    LUXURY HERO SECTION 
+=============================== */
+
+.lux-hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.lux-hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lux-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.4));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.lux-overlay h1 {
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+}
+
+.lux-overlay p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.lux-cta {
+    margin-top: 30px;
+    padding: 14px 35px;
+    border: 1px solid gold;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+
+.lux-cta::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+    transition: 0.6s;
+}
+
+.lux-cta:hover::after {
+    left: 100%;
+}
+
+/* SECTIONS */
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.lux-row {
+    display: flex;
+    min-height: 450px;
+}
+
+.lux-row.reverse {
+    flex-direction: row-reverse;
+}
+
+
+.lux-img {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    min-height: 350px;
+    width: 100%;
+    /* background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.588),
+            rgba(0, 0, 0, 0.548),
+            rgba(0, 0, 0, 0.481)); */
+}
+
+.lux-text {
+    flex: 1;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lux-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.lux-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: 1px solid gold;
+    text-decoration: none;
+    color: black;
+    width: fit-content;
+    position: relative;
+    overflow: hidden;
+}
+
+.lux-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+    transition: 0.6s;
+}
+
+.lux-btn:hover::after {
+    left: 100%;
+}
+
+/* ===============================
+    LUXURY SALES CARD
+=============================== */
 
 .luxury-sales-container {
     display: grid;
@@ -130,7 +277,6 @@ body {
     gap: 30px;
     padding: 20px 0;
 }
-
 
 /* CARD */
 
@@ -153,22 +299,21 @@ body {
     transition: transform .6s ease;
 }
 
-
 /* CARD CONTENT */
-
 .luxury-sales-card div:nth-child(2) {
     padding: 18px 15px;
     text-align: center;
 }
 
-
 /* CATEGORY TEXT */
 
 .luxury-sales-card span {
     font-size: 12px;
+    text-transform: uppercase;
     letter-spacing: 2px;
     color: #888;
-    text-transform: uppercase;
+    color: #d4af37;
+    font-weight: 600;
 }
 
 
@@ -344,13 +489,94 @@ body {
     }
 }
 
-
-/* END OF LUXURY SALES SECTION */
-
-
-/* FOOTER DESIGN */
 /* ===============================
-   LUXURY FOOTER
+    END OF LUXURY SALES CARD
+=============================== */
+/* ===============================
+    ABOUT SECTION STYLES
+=============================== */
+
+.section {
+    width: 100%;
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* TEAM */
+
+.team-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.team-card {
+    /* height: 2000px; */
+    width: 90%;
+    max-width: 900px;
+    /* background: rgba(128, 128, 128, 0.014); */
+    border-radius: 16px;
+    background-image: url(./assets/ChatGPT\ Image\ Feb\ 20\,\ 2026\,\ 12_29_48\ PM.webp), linear-gradient(rgba(0, 0, 0, 0.727), rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.353));
+    background-repeat: no-repeat;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.26);
+    transition: 0.3s;
+    text-align: center;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+}
+
+.team-card img {
+    width: 260px;
+    height: 280px;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.team-info {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.team-info h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+}
+
+.role {
+    color: #777;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+}
+
+/* ===============================
+   END OF ABOUT SECTION STYLES
+=============================== */
+
+/* ===============================
+   LUXURY FOOTER STYLES
 =============================== */
 
 .lux-footer {
@@ -561,8 +787,196 @@ body {
 
 /* End of Footer Styles */
 
-/* Signup Styles */
+/* =========================
+LOGIN STYLES
+========================= */
 
+@keyframes pageBlurIn {
+    0% {
+        filter: blur(15px);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.auth-card {
+    width: 480px;
+    max-width: 100%;
+    background: white;
+    border-radius: 30px;
+    padding: 60px 50px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+    animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    letter-spacing: 6px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 14px;
+    border-radius: 14px;
+    border: 1px solid #e5e5e5;
+    background: #fafafa;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+    background: white;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: #999;
+    background: white;
+    padding: 0 6px;
+    transition: 0.3s;
+}
+
+.input-group input:focus+label,
+.input-group input:not(:placeholder-shown)+label {
+    top: -9px;
+    font-size: 11px;
+    color: #d4af37;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.eye-icon:hover {
+    color: #d4af37;
+}
+
+.forgot {
+    text-align: right;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.forgot a {
+    text-decoration: none;
+    color: #b9982e;
+    transition: 0.3s;
+}
+
+.forgot a:hover {
+    color: #d4af37;
+}
+
+/* Shimmer Button */
+.auth-btn {
+    position: relative;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(120deg, #d4af37, #f1d37a, #d4af37);
+    background-size: 200% 200%;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.auth-btn:hover {
+    animation: shimmer 1.5s infinite linear;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.35);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.social-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    background: white;
+    cursor: pointer;
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-color: #d4af37;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #777;
+}
+
+.signup-link a {
+    text-decoration: none;
+    color: #b9982e;
+    font-weight: 500;
+    margin-left: 6px;
+    transition: 0.3s;
+}
+
+.signup-link a:hover {
+    color: #d4af37;
+}
+
+/* =========================
+SIGNUP STYLES
+========================= */
 
 @keyframes pageBlurIn {
     0% {
@@ -732,8 +1146,9 @@ body {
     border-color: #d4af37;
 }
 
-
-/* Reset Password Styles */
+/* =========================
+    RESET PASSWORD STYLES
+========================= */
 
 .reset-card {
     width: 520px;
@@ -999,12 +1414,72 @@ RESPONSIVE
 /* LARGE TABLETS */
 
 @media(max-width:1200px) {
+
+    /* ===============================
+    LUXURY SALES CARDS STYLES
+=============================== */
+
     .luxury-sales-container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 992px) {
+
+    /* ===============================
+    HOME PAGE LUXURY SECTION
+=============================== */
+
+    .lux-row {
+        flex-direction: column;
+    }
+
+    .lux-row.reverse {
+        flex-direction: column;
+    }
+
+    .lux-img {
+        height: 300px;
+    }
+
+    .lux-text {
+        padding: 40px 25px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .lux-overlay h1 {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+
+    .lux-overlay p {
+        font-size: 1rem;
+    }
+
+    /* ===============================
+    CORE VALUES & WHY SHOP WITH US IMAGES
+=============================== */
+
+    #core-values-image {
+        order: 2;
+    }
+
+    #core-values-image-1 {
+        order: 1;
+    }
+
+    #why-shop-with-us-image-1 {
+        order: 1;
+    }
+
+    #why-shop-with-us-image {
+        order: 2;
+    }
+
+    /* ===============================
+    FOOTER STYLES
+=============================== */
 
     .footer-container {
         gap: 40px;
@@ -1017,15 +1492,22 @@ RESPONSIVE
 
 }
 
-/* TABLETS */
-
 @media(max-width:900px) {
+
+    /* ===============================
+    LUXURY SALES CARDS STYLES
+=============================== */
+
     .luxury-sales-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (max-width: 855px) {
+
+    /* ===============================
+    NAVBAR STYLES
+=============================== */
 
     .mobile-only {
         display: block;
@@ -1039,32 +1521,6 @@ RESPONSIVE
         display: none;
     }
 
-    /* 
-    .nav-center-1 {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-
-        max-height: calc(100vh - 70px);
-         FULL SCREEN HEIGHT 
-        overflow-y: auto;
-         ENABLE SCROLL 
-
-        -webkit-overflow-scrolling: touch;
-         smooth scroll on mobile 
-
-        border-top: 1px solid #eee;
-        scroll-behavior: smooth;
-        touch-action: pan-y;
-    } */
-    /* 
-    .nav-center-1.active {
-        max-height: 100vh;
-    } */
-
     .nav-center-1 {
         position: fixed;
         top: 0;
@@ -1072,14 +1528,11 @@ RESPONSIVE
         height: 100vh;
         width: 100%;
         /* FULL WIDTH NOW */
-
         background: white;
         flex-direction: column;
         padding: 80px 20px;
-
         transform: translateX(-100%);
         transition: transform 0.35s ease;
-
         overflow-y: auto;
         z-index: 9999;
     }
@@ -1122,8 +1575,10 @@ RESPONSIVE
     }
 }
 
-/* MOBILE */
 @media(max-width:768px) {
+    /* ===============================
+   MODAL STYLES
+=============================== */
 
     .modal-content {
         max-height: 85vh;
@@ -1132,6 +1587,10 @@ RESPONSIVE
     .modal-body {
         padding-bottom: 20px;
     }
+
+    /* ===============================
+   FOOTER STYLES
+=============================== */
 
     .newsletter form {
         flex-direction: column;
@@ -1146,7 +1605,40 @@ RESPONSIVE
     }
 }
 
+@media(max-width:700px) {
+
+    .team-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .team-info {
+        text-align: center;
+    }
+
+    #core-values-image {
+        order: 2;
+    }
+
+    #core-values-image-1 {
+        order: 1;
+    }
+
+    #why-shop-with-us-image {
+        order: 2;
+    }
+
+    #why-shop-with-us-image-1 {
+        order: 1;
+    }
+
+}
+
 @media(max-width:600px) {
+    /* ===============================
+   Reset Password Styles
+=============================== */
+
     .reset-card {
         padding: 40px 25px;
         border-radius: 25px;
@@ -1157,30 +1649,45 @@ RESPONSIVE
         height: 45px;
     }
 
+    /* ===============================
+   Signup, Login & Reset Forms Styles
+=============================== */
+
+    .auth-card {
+        padding: 40px 25px;
+        border-radius: 25px;
+    }
+
     /* footer */
 
     /* ===============================
    MOBILE
 =============================== */
 
+    .footer-logo {
+        width: 300px;
+    }
+
     .footer-container {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
         padding: 0 20px 50px;
     }
 
     .brand-col {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: left;
     }
 
     .footer-description {
+        font-size: 16px;
         max-width: 350px;
+        text-align: left;
     }
 
     .social-icons {
-        justify-content: center;
+        justify-content: left;
     }
 
     .newsletter form {
@@ -1206,7 +1713,31 @@ RESPONSIVE
 
 }
 
+@media (max-width:576px) {
+
+    .lux-hero {
+        height: 100vh;
+    }
+
+    .lux-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .lux-overlay p {
+        font-size: 0.9rem;
+    }
+
+    .lux-cta {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
 @media(max-width:500px) {
+    /* ===============================
+    LUXURY SALES CARDS STYLES
+=============================== */
+
     .luxury-sales-container {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -1253,7 +1784,6 @@ RESPONSIVE
 .modal-image:hover img {
     transform: scale(1.1);
 }
-
 
 /* ============================= */
 /* ✅ ADD TO CART ANIMATION */
