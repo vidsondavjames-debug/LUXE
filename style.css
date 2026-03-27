@@ -407,13 +407,13 @@ body {
 /* BODY LAYOUT */
 .modal-body {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     align-items: center;
 }
 
 /* IMAGE */
 .modal-image img {
-    width: 300px;
+    width: 330px;
     border-radius: 10px;
 }
 
@@ -497,8 +497,8 @@ body {
 =============================== */
 
 .section {
-    width: 100%;
-    padding: 4rem 3rem;
+    width: 99%;
+    padding: 4rem 0rem;
     text-align: center;
 }
 
@@ -511,7 +511,7 @@ body {
 }
 
 /* TEAM */
-
+/* TEAM CONTAINER */
 .team-container {
     margin-top: 3rem;
     display: flex;
@@ -520,55 +520,41 @@ body {
     align-items: center;
 }
 
+/* TEAM CARD */
 .team-card {
-    /* height: 2000px; */
     width: 90%;
     max-width: 900px;
-    /* background: rgba(128, 128, 128, 0.014); */
-    border-radius: 16px;
-    background-image: url(./assets/ChatGPT\ Image\ Feb\ 20\,\ 2026\,\ 12_29_48\ PM.webp), linear-gradient(rgba(0, 0, 0, 0.727), rgba(0, 0, 0, 0.479), rgba(0, 0, 0, 0.353));
+    padding: 2rem;
+    border-radius: 9px 18px;
+
+    background-image: url(./assets/ChatGPT\ Image\ Feb\ 20\,\ 2026\,\ 12_29_48\ PM.webp), linear-gradient(135deg, black, black);
+
     background-repeat: no-repeat;
-    padding: 2.5rem;
+    background-size: cover;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.2rem;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.26);
-    transition: 0.3s;
+
+    box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.315);
     text-align: center;
 }
 
-.team-card:hover {
-    transform: translateY(-6px);
-}
-
+/* IMAGE FIX (MOST IMPORTANT) */
 .team-card img {
-    width: 260px;
-    height: 280px;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: contain;
+    width: 100%;
+    max-width: 220px;
+    /* 🔥 prevents overflow */
+    height: auto;
+    /* 🔥 keeps aspect ratio */
     border-radius: 50%;
     object-fit: cover;
-    display: block;
-    margin: 0 auto;
 }
 
+/* INFO */
 .team-info {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.team-info h3 {
-    margin-bottom: 0.4rem;
-    font-size: 1.4rem;
-}
-
-.role {
-    color: #777;
-    margin-bottom: 0.6rem;
-    font-weight: 600;
+    max-width: 600px;
 }
 
 /* ===============================
@@ -788,370 +774,11 @@ body {
 /* End of Footer Styles */
 
 /* =========================
-LOGIN STYLES
-========================= */
-
-@keyframes pageBlurIn {
-    0% {
-        filter: blur(15px);
-        opacity: 0;
-    }
-
-    100% {
-        filter: blur(0);
-        opacity: 1;
-    }
-}
-
-.auth-card {
-    width: 480px;
-    max-width: 100%;
-    background: white;
-    border-radius: 30px;
-    padding: 60px 50px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
-    animation: fadeUp 0.9s ease forwards;
-}
-
-@keyframes fadeUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    letter-spacing: 6px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.input-group {
-    position: relative;
-    margin-bottom: 25px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 16px 14px;
-    border-radius: 14px;
-    border: 1px solid #e5e5e5;
-    background: #fafafa;
-    outline: none;
-    transition: 0.3s;
-}
-
-.input-group input:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
-    background: white;
-}
-
-.input-group label {
-    position: absolute;
-    top: 50%;
-    left: 14px;
-    transform: translateY(-50%);
-    font-size: 13px;
-    color: #999;
-    background: white;
-    padding: 0 6px;
-    transition: 0.3s;
-}
-
-.input-group input:focus+label,
-.input-group input:not(:placeholder-shown)+label {
-    top: -9px;
-    font-size: 11px;
-    color: #d4af37;
-}
-
-.eye-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #aaa;
-    transition: 0.3s;
-}
-
-.eye-icon:hover {
-    color: #d4af37;
-}
-
-.forgot {
-    text-align: right;
-    font-size: 13px;
-    margin-top: -10px;
-    margin-bottom: 25px;
-}
-
-.forgot a {
-    text-decoration: none;
-    color: #b9982e;
-    transition: 0.3s;
-}
-
-.forgot a:hover {
-    color: #d4af37;
-}
-
-/* Shimmer Button */
-.auth-btn {
-    position: relative;
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 16px;
-    background: linear-gradient(120deg, #d4af37, #f1d37a, #d4af37);
-    background-size: 200% 200%;
-    font-weight: 500;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-.auth-btn:hover {
-    animation: shimmer 1.5s infinite linear;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.35);
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 200% 50%;
-    }
-}
-
-.social-btn {
-    width: 100%;
-    padding: 14px;
-    border-radius: 16px;
-    border: 1px solid #eee;
-    background: white;
-    cursor: pointer;
-    margin-top: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    transition: 0.3s;
-}
-
-.social-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border-color: #d4af37;
-}
-
-.signup-link {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 14px;
-    color: #777;
-}
-
-.signup-link a {
-    text-decoration: none;
-    color: #b9982e;
-    font-weight: 500;
-    margin-left: 6px;
-    transition: 0.3s;
-}
-
-.signup-link a:hover {
-    color: #d4af37;
-}
-
-/* =========================
-SIGNUP STYLES
-========================= */
-
-@keyframes pageBlurIn {
-    0% {
-        filter: blur(15px);
-        opacity: 0;
-    }
-
-    100% {
-        filter: blur(0);
-        opacity: 1;
-    }
-}
-
-.auth-card {
-    width: 500px;
-    max-width: 100%;
-    background: white;
-    border-radius: 30px;
-    padding: 60px 50px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
-    animation: fadeUp 0.9s ease forwards;
-}
-
-@keyframes fadeUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Forms */
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    letter-spacing: 6px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.input-group {
-    position: relative;
-    margin-bottom: 22px;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 16px 14px;
-    border-radius: 14px;
-    border: 1px solid #e5e5e5;
-    background: #fafafa;
-    outline: none;
-    transition: 0.3s;
-}
-
-.input-group input:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
-    background: white;
-}
-
-.input-group label {
-    position: absolute;
-    top: 50%;
-    left: 14px;
-    transform: translateY(-50%);
-    font-size: 13px;
-    color: #999;
-    background: white;
-    padding: 0 6px;
-    transition: 0.3s;
-}
-
-.input-group input:focus+label,
-.input-group input:not(:placeholder-shown)+label {
-    top: -9px;
-    font-size: 11px;
-    color: #d4af37;
-}
-
-.eye-icon {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #aaa;
-    transition: 0.3s;
-}
-
-.eye-icon:hover {
-    color: #d4af37;
-}
-
-.strength {
-    font-size: 12px;
-    margin-top: -15px;
-    margin-bottom: 15px;
-}
-
-.radio-group {
-    display: flex;
-    gap: 15px;
-    font-size: 13px;
-    margin-bottom: 22px;
-}
-
-.radio-group input {
-    accent-color: #d4af37;
-}
-
-/* Shimmer Button */
-.auth-btn {
-    position: relative;
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 16px;
-    background: linear-gradient(120deg, #d4af37, #f1d37a, #d4af37);
-    background-size: 200% 200%;
-    color: #000;
-    font-weight: 500;
-    cursor: pointer;
-    overflow: hidden;
-    transition: 0.4s;
-}
-
-.auth-btn:hover {
-    animation: shimmer 1.5s infinite linear;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.35);
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    100% {
-        background-position: 200% 50%;
-    }
-}
-
-.social-btn {
-    width: 100%;
-    padding: 14px;
-    border-radius: 16px;
-    border: 1px solid #eee;
-    background: white;
-    cursor: pointer;
-    margin-top: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    transition: 0.3s;
-}
-
-.social-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border-color: #d4af37;
-}
-
-/* =========================
     RESET PASSWORD STYLES
 ========================= */
 
 .reset-card {
-    width: 520px;
+    width: 500px;
     max-width: 100%;
     backdrop-filter: blur(25px);
     background: rgba(255, 255, 255, 0.65);
@@ -1581,11 +1208,39 @@ RESPONSIVE
 =============================== */
 
     .modal-content {
-        max-height: 85vh;
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
     }
 
     .modal-body {
-        padding-bottom: 20px;
+        flex-direction: column;
+        /* STACK */
+        align-items: flex-start;
+    }
+
+    .modal-image img {
+        width: 100%;
+    }
+
+    .modal-info {
+        width: 100%;
+    }
+
+    .modal-info h2 {
+        font-size: 20px;
+    }
+
+    .modal-info p {
+        font-size: 14px;
+    }
+
+    .modal-info h3 {
+        font-size: 18px;
+    }
+
+    .add-to-cart-btn {
+        width: 100%;
     }
 
     /* ===============================
@@ -1606,7 +1261,7 @@ RESPONSIVE
 }
 
 @media(max-width:700px) {
-
+    /* 
     .team-card {
         flex-direction: column;
         text-align: center;
@@ -1614,7 +1269,7 @@ RESPONSIVE
 
     .team-info {
         text-align: center;
-    }
+    } */
 
     #core-values-image {
         order: 2;
@@ -1635,34 +1290,16 @@ RESPONSIVE
 }
 
 @media(max-width:600px) {
-    /* ===============================
-   Reset Password Styles
-=============================== */
 
-    .reset-card {
-        padding: 40px 25px;
-        border-radius: 25px;
+    .team-card {
+        padding: 1.5rem;
+        /* 🔥 reduce padding */
     }
 
-    .otp-container input {
-        width: 45px;
-        height: 45px;
+    .team-card img {
+        max-width: 160px;
+        /* 🔥 smaller image */
     }
-
-    /* ===============================
-   Signup, Login & Reset Forms Styles
-=============================== */
-
-    .auth-card {
-        padding: 40px 25px;
-        border-radius: 25px;
-    }
-
-    /* footer */
-
-    /* ===============================
-   MOBILE
-=============================== */
 
     .footer-logo {
         width: 300px;
@@ -1767,7 +1404,6 @@ RESPONSIVE
         width: 100%;
     }
 }
-
 
 /* ============================= */
 /* ✅ IMAGE HOVER ZOOM */

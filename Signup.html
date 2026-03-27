@@ -25,30 +25,224 @@
     <link rel="icon" type="image/x-icon" href="./assets/favicons/Signup-favicon.png">
 
     <style>
+        /* RESET */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
 
         body {
+            font-family: 'Poppins', sans-serif;
             min-height: 100vh;
             background: linear-gradient(135deg, #fdfbf6, #f2ede3);
+        }
+
+        /* CENTER WRAPPER (IMPORTANT FIX) */
+        .auth-container {
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            animation: pageBlurIn 1s ease forwards;
         }
 
+        /* CARD */
+        .auth-card {
+            width: 100%;
+            max-width: 480px;
+            background: white;
+            border-radius: 30px;
+            padding: 50px 35px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+            animation: fadeUp 0.9s ease forwards;
+        }
+
+        /* LOGO */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            letter-spacing: 6px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* INPUT GROUP */
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+            background: #fafafa;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input-group input:focus {
+            border-color: #d4af37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+            background: white;
+        }
+
+        /* LABEL */
+        .input-group label {
+            position: absolute;
+            top: 50%;
+            left: 14px;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: #999;
+            background: white;
+            padding: 0 6px;
+            transition: 0.3s;
+        }
+
+        /* FLOAT LABEL */
+        .input-group input:focus+label,
+        .input-group input:not(:placeholder-shown)+label {
+            top: -8px;
+            font-size: 10px;
+            color: #d4af37;
+        }
+
+        /* PASSWORD ICON */
+        .eye-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        /* STRENGTH */
+        .strength {
+            font-size: 12px;
+            margin: -10px 0 10px;
+        }
+
+        /* RADIO */
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* BUTTON */
+        .auth-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(120deg, #d4af37, #f1d37a, #d4af37);
+            background-size: 200% 200%;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .auth-btn:hover {
+            animation: shimmer 1.5s infinite linear;
+        }
+
+        /* SOCIAL */
+        .social-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 14px;
+            border: 1px solid #eee;
+            background: white;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* LOGIN LINK */
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+
+        /* ANIMATIONS (KEPT ✔) */
+        @keyframes fadeUp {
+            from {
+                transform: translateY(25px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0%
+            }
+
+            100% {
+                background-position: 200%
+            }
+        }
+
+        /* =========================
+   RESPONSIVE FIXES
+========================= */
+
+        /* TABLET */
+        @media (max-width: 768px) {
+            .auth-card {
+                padding: 35px 25px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 480px) {
+            .auth-card {
+                padding: 25px 18px;
+                border-radius: 20px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .input-group input {
+                padding: 12px;
+            }
+
+            .auth-btn {
+                padding: 12px;
+            }
+        }
+
+        /* SMALL PHONES */
+        @media (max-width: 360px) {
+            .auth-card {
+                padding: 20px 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <main>
-
+    <div class="auth-container">
 
         <div class="auth-card">
             <div class="logo">LUXE</div>
@@ -68,6 +262,7 @@
                 <label>Password</label>
                 <i class="fa-solid fa-eye-slash eye-icon" onclick="togglePassword('signupPassword', this)"></i>
             </div>
+
             <div class="strength" id="strengthText"></div>
 
             <div class="input-group">
@@ -78,7 +273,7 @@
 
             <div class="input-group">
                 <input type="date" required>
-                <label style="top:-9px;font-size:11px;color:#d4af37;">Date of Birth</label>
+                <label style="top:-8px;font-size:10px;color:#d4af37;">Date of Birth</label>
             </div>
 
             <div class="radio-group">
@@ -89,53 +284,17 @@
 
             <button class="auth-btn" onclick="validateSignup()">Create Account</button>
 
-            <button class="social-btn"><i class="fa-brands fa-google"></i> Sign up with Google</button>
-            <button class="social-btn"><i class="fa-brands fa-apple"></i> Sign up with Apple</button>
-            <button class="social-btn"><i class="fa-brands fa-instagram"></i> Sign up with Instagram</button>
-            <button class="social-btn"><i class="fa-brands fa-x-twitter"></i> Sign up with X</button>
+            <button class="social-btn"><i class="fa-brands fa-google"></i> Google</button>
+            <button class="social-btn"><i class="fa-brands fa-apple"></i> Apple</button>
 
-            <div style="text-align:center;margin-top:25px;font-size:14px;color:#777;">
+            <div class="login-link">
                 Already have an account?
-                <a href="./login.html"
-                    style="color:#b9982e;font-weight:500;text-decoration:none;margin-left:6px;transition:0.3s;"
-                    onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='#b9982e'">Login</a>
+                <a href="./login.html">Login</a>
             </div>
 
         </div>
-    </main>
 
-    <script>
-        function togglePassword(id, icon) {
-            const input = document.getElementById(id);
-            if (input.type === 'password') {
-                input.type = 'text';
-                icon.classList.replace('fa-eye-slash', 'fa-eye');
-            } else {
-                input.type = 'password';
-                icon.classList.replace('fa-eye', 'fa-eye-slash');
-            }
-        }
-
-        const passwordInput = document.getElementById('signupPassword');
-        passwordInput.addEventListener('input', function () {
-            const val = passwordInput.value;
-            const strengthText = document.getElementById('strengthText');
-            let strength = 'Weak';
-            if (val.length > 8 && /[A-Z]/.test(val) && /[0-9]/.test(val)) strength = 'Strong';
-            else if (val.length >= 6) strength = 'Medium';
-            strengthText.innerText = 'Password Strength: ' + strength;
-        });
-
-        function validateSignup() {
-            const pass = document.getElementById('signupPassword').value;
-            const confirm = document.getElementById('confirmPassword').value;
-            if (pass !== confirm) {
-                alert('Passwords do not match');
-                return;
-            }
-            alert('Signup validation passed (Connect to backend).');
-        }
-    </script>
+    </div>
 
 </body>
 
