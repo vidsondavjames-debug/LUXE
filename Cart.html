@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxury Cart</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #f7f7f7;
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            /* increased spacing */
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            /* increased spacing */
+            align-items: center;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            transition: 0.3s ease;
+            margin-bottom: 20px;
+            /* spacing between items */
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .price {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .qty {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .qty button {
+            border: none;
+            padding: 6px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #eee;
+            transition: 0.2s;
+        }
+
+        .qty button:hover {
+            background: #ddd;
+        }
+
+        .remove {
+            cursor: pointer;
+            color: #999;
+            font-size: 20px;
+            transition: 0.2s;
+        }
+
+        .remove:hover {
+            color: red;
+        }
+
+        .summary {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            height: fit-content;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .summary h2 {
+            margin-bottom: 20px;
+        }
+
+        .summary div {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px 0;
+        }
+
+        .total {
+            border-top: 1px solid #ddd;
+            padding-top: 12px;
+            font-weight: bold;
+        }
+
+        .checkout {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 12px;
+            background: black;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .checkout:hover {
+            opacity: 0.85;
+        }
+
+        @media(max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Your Cart</h1>
+
+    <div class="container">
+        <div id="cart-items"></div>
+
+        <div class="summary">
+            <h2>Order Summary</h2>
+            <div>
+                <span>Subtotal</span>
+                <span id="subtotal">$0</span>
+            </div>
+            <div>
+                <span>Shipping</span>
+                <span>$10</span>
+            </div>
+            <div class="total">
+                <span>Total</span>
+                <span id="total">$0</span>
+            </div>
+            <button class="checkout">Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // Added luxury items (based on your store)
+            const items = [
+                { id: 1, name: "Luxury Watch", price: 299, qty: 1, img: "./watches/Luxury Watch(1).webp" },
+                { id: 2, name: "Luxury Watch", price: 299, qty: 1, img: "./watches/Luxury Watch (2).webp" },
+                { id: 3, name: "Designer Sneakers", price: 180, qty: 1, img: "./shoes/shoe1.jpg" },
+                { id: 4, name: "Premium Leather Bag", price: 250, qty: 1, img: "./bags/bag1.jpg" },
+                { id: 5, name: "Luxury Hoodie", price: 150, qty: 1, img: "./clothes/hoodie1.jpg" },
+                { id: 6, name: "Classic Suit", price: 400, qty: 1, img: "./clothes/suit1.jpg" }
+            ];
+
+            const cartContainer = document.getElementById("cart-items");
+
+            function renderCart() {
+                cartContainer.innerHTML = "";
+
+                items.forEach(item => {
+                    const div = document.createElement("div");
+                    div.className = "card";
+
+                    div.innerHTML = `
+          <img src="${item.img}" />
+          <div class="details">
+            <h3>${item.name}</h3>
+            <p class="price">$${item.price}</p>
+            <div class="qty">
+              <button data-id="${item.id}" class="decrease">-</button>
+              <span>${item.qty}</span>
+              <button data-id="${item.id}" class="increase">+</button>
+            </div>
+          </div>
+          <div class="remove" data-id="${item.id}">✕</div>
+        `;
+
+                    cartContainer.appendChild(div);
+                });
+
+                attachEvents();
+                updateTotal();
+            }
+
+            function attachEvents() {
+                document.querySelectorAll(".increase").forEach(btn => {
+                    btn.onclick = () => {
+                        const id = Number(btn.dataset.id);
+                        const item = items.find(i => i.id === id);
+                        item.qty++;
+                        renderCart();
+                    };
+                });
+
+                document.querySelectorAll(".decrease").forEach(btn => {
+                    btn.onclick = () => {
+                        const id = Number(btn.dataset.id);
+                        const item = items.find(i => i.id === id);
+                        if (item.qty > 1) item.qty--;
+                        renderCart();
+                    };
+                });
+
+                document.querySelectorAll(".remove").forEach(btn => {
+                    btn.onclick = () => {
+                        const id = Number(btn.dataset.id);
+                        const index = items.findIndex(i => i.id === id);
+                        items.splice(index, 1);
+                        renderCart();
+                    };
+                });
+            }
+
+            function updateTotal() {
+                let subtotal = 0;
+                items.forEach(item => subtotal += item.price * item.qty);
+
+                document.getElementById("subtotal").innerText = "$" + subtotal;
+                document.getElementById("total").innerText = "$" + (subtotal + 10);
+            }
+
+            // Test cases
+            function runTests() {
+                console.assert(items.length === 6, "Should have 6 items loaded");
+                console.assert(items[0].price === 299, "Watch price should be 299");
+                console.assert(items[2].name.includes("Sneakers"), "Should include shoes");
+            }
+
+            runTests();
+            renderCart();
+        });
+    </script>
+
+</body>
+
+</html>
