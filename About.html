@@ -34,6 +34,62 @@
       color: #333;
     }
 
+    /* ===============================
+   STATS SECTION
+=============================== */
+
+    .stats-section {
+      position: relative;
+      background: url('./assets/luxury-bg.jpg') center/cover no-repeat;
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    /* dark overlay for luxury feel */
+    .stats-section .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+    }
+
+    .stats-container {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .stat h2 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .stat p {
+      color: #ddd;
+    }
+
+    /* responsive */
+    @media(max-width:768px) {
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* .section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.6s ease;
+    }
+
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+    } */
   </style>
 </head>
 
@@ -53,7 +109,7 @@
       <!-- NAV LINKS -->
       <ul class="nav-center-1" id="navMenu-1">
 
-        <li><a href="#">Home</a></li>
+        <li><a href="./index.html">Home</a></li>
 
         <li class="has-dropdown-1">
           <a href="#">Pages <span class="arrow">▾</span></a>
@@ -101,6 +157,15 @@
         <li class="mobile-only">
           <a href="./signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
         </li>
+
+        <li class="mobile-only">
+          <a href="./Cart.html"> <i class="fas fa-shopping-cart"></i> Cart</a>
+        </li>
+
+        <li class="mobile-only">
+          <a href="./wishlist.html"> <i class="fas fa-heart"></i> Wishlist </a>
+        </li>
+
       </ul>
 
       <!-- RIGHT ICONS -->
@@ -133,7 +198,7 @@
 
   <main>
 
-    <section class="section row">
+    <section class="section row" data-aos="fade-up" data-aos-duration="1000">
 
       <div class="col-lg-6 col-md-12 col-sm-12" id="about-image-1">
 
@@ -156,16 +221,17 @@
       </div>
 
       <div class="col-lg-6 col-md-12 col-sm-12" id="about-image">
-        <img src="./assets/About Us Image.webp" width="100%" height="400px" style="border-radius: 10px;" alt="About Us">
+        <img src="./assets/About Us Image.webp" data-aos="zoom-in" data-aos-duration="1500" width="100%" height="400px"
+          style="border-radius: 10px;" alt="About Us">
       </div>
 
     </section>
 
-    <section class="section row" style="background:white;">
+    <section class="section row" data-aos="fade-up" data-aos-duration="1500" style="background:white;">
 
       <div class="col-lg-6" id="why-shop-with-us-image">
-        <img src="./assets/Why-shop-with-us.webp" width="100%" height="420px" style="border-radius: 10px;"
-          alt="About Us">
+        <img src="./assets/Why-shop-with-us.webp" data-aos="zoom-in" data-aos-duration="2000" width="100%"
+          height="420px" style="border-radius: 10px;" alt="About Us">
       </div>
 
       <div class="col-lg-6" id="why-shop-with-us-image-1">
@@ -194,7 +260,7 @@
 
     </section>
 
-    <section class="section row">
+    <section class="section row" data-aos="fade-up" data-aos-duration="1000">
 
       <div class="col-lg-6" id="our-vision-image-1">
 
@@ -218,16 +284,17 @@
       </div>
 
       <div class="col-lg-6" id="our-vision-image">
-        <img src="./assets/Our-Vision.webp" width="100%" height="420px" style="border-radius: 10px;" alt="About Us">
+        <img src="./assets/Our-Vision.webp" data-aos="zoom-in" data-aos-duration="1000" width="100%" height="420px"
+          style="border-radius: 10px;" alt="About Us">
       </div>
 
     </section>
 
-    <section class="section row" style="background:white;">
+    <section class="section row" data-aos="fade-up" data-aos-duration="1500" style="background:white;">
 
       <div class="col-lg-6" id="core-values-image">
-        <img src="./assets/Our-core -values.webp" width="100%" height="420px" style="border-radius: 10px;"
-          alt="Our Core Values">
+        <img src="./assets/Our-core -values.webp" data-aos="zoom-in" data-aos-duration="1500" width="100%"
+          height="420px" style="border-radius: 10px;" alt="Our Core Values">
       </div>
 
       <div class="col-lg-6" id="core-values-image-1">
@@ -249,14 +316,41 @@
 
     </section>
 
-    <section class="our-team section" id="team">
+    <section class="stats-section" data-aos="fade-up" data-aos-duration="1500">
+      <div class="overlay"></div>
+
+      <div class="stats-container">
+        <div class="stat">
+          <h2 class="count" data-target="10000">0</h2>
+          <p>Happy Customers</p>
+        </div>
+
+        <div class="stat">
+          <h2 class="count" data-target="500">0</h2>
+          <p>Premium Products</p>
+        </div>
+
+        <div class="stat">
+          <h2 class="count" data-target="100">0</h2>
+          <p>Countries Served</p>
+        </div>
+
+        <div class="stat">
+          <h2 class="count" data-target="24">0</h2>
+          <p>Support Hours</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-team section" id="team" data-aos="fade-up" data-aos-duration="1500">
 
       <h2>Meet Our Team</h2>
 
       <div class="team-container row">
 
-        <div class="team-card col-lg-6 col-md-6 col-sm-12">
-          <img src="./assets/Davidson James.webp" width="100px" height="50%" alt="CEO">
+        <div class="team-card col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-duration="1500">
+          <img src="./assets/Davidson James.webp" data-aos="zoom-in" data-aos-duration="1000" width="100px" height="50%"
+            alt="CEO">
           <div class="team-info">
             <h3>Davidson James</h3>
             <p class="role">Chief Executive Officer</p>
@@ -264,7 +358,7 @@
           </div>
         </div>
 
-        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+        <div class="team-card col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-duration="1500">
           <!-- <img src="https://via.placeholder.com/160" alt="CTO"> -->
           <div class="team-info">
             <h3>Sarah Cole</h3>
@@ -273,7 +367,7 @@
           </div>
         </div>
 
-        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+        <div class="team-card col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-duration="1500">
           <!-- <img src="https://via.placeholder.com/160" alt="Lead Designer"> -->
           <div class="team-info">
             <h3>Michael Reed</h3>
@@ -284,7 +378,7 @@
           </div>
         </div>
 
-        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+        <div class="team-card col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-duration="1500">
           <!-- <img src="https://via.placeholder.com/160" alt="Head of Marketing"> -->
           <div class="team-info">
             <h3>Angela Brooks</h3>
@@ -293,7 +387,7 @@
           </div>
         </div>
 
-        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+        <div class="team-card col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-duration="1500">
           <!-- <img src="https://via.placeholder.com/160" alt="Executive Director"> -->
           <div class="team-info">
             <h3>Daniel Foster</h3>
@@ -302,7 +396,7 @@
           </div>
         </div>
 
-        <div class="team-card col-lg-6 col-md-6 col-sm-12">
+        <div class="team-card col-lg-6 col-md-6 col-sm-12" data-aos="fade-up" data-aos-duration="1500">
           <!-- <img src="https://via.placeholder.com/160" alt="Operations Manager"> -->
           <div class="team-info">
             <h3>Rachel Green</h3>
@@ -314,6 +408,22 @@
       </div>
     </section>
 
+    <section class="section"
+      style="background:rgba(0, 0, 0, 0.889); color:white;width: 100%; text-align: center; padding: 40px 20px;"
+      data-aos="fade-up" data-aos-duration="1500">
+      <h2>Ready to Explore Luxury?</h2>
+      <p style="margin:15px 0;">Discover premium collections crafted just for you.</p>
+      <a href="./index.html#men-section" style="
+    display:inline-block;
+    padding:12px 25px;
+    background:white;
+    color:black;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+      ">Shop Now</a>
+    </section>
+
   </main>
 
   <footer class="lux-footer">
@@ -323,7 +433,7 @@
       <!-- Brand -->
       <div class="footer-col brand-col">
 
-        <a href="#"><img src="./assets/Main-logo.webp" alt="LUXE Logo" class="footer-logo"></a>
+        <a href="./index.html"><img src="./assets/Main-logo.webp" alt="LUXE Logo" class="footer-logo"></a>
 
         <p class="footer-description">
           Elevating your lifestyle with premium collections,
@@ -358,11 +468,11 @@
         <h3>Support</h3>
         <ul>
           <li><a href="./About.html">About Us</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Shipping & Returns</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms</a></li>
+          <li><a href="./Contact.html">Contact Us</a></li>
+          <li><a href="./FAQ.html">FAQ</a></li>
+          <li><a href="./Shipping-returns.html">Shipping & Returns</a></li>
+          <li><a href="./Privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="./Terms.html">Terms</a></li>
         </ul>
       </div>
 
@@ -405,6 +515,59 @@
 
   </footer>
 
+  <script>
+    // const sections = document.querySelectorAll('.section');
+
+    // window.addEventListener('scroll', () => {
+    //   sections.forEach(sec => {
+    //     const top = sec.getBoundingClientRect().top;
+    //     if (top < window.innerHeight - 100) {
+    //       sec.classList.add('show');
+    //     }
+    //   });
+    // });
+
+    // =============================
+    // COUNTING ANIMATION
+    // =============================
+
+    const counters = document.querySelectorAll('.count');
+    let started = false;
+
+    function startCounting() {
+      if (started) return;
+
+      const section = document.querySelector('.stats-section');
+      const sectionTop = section.getBoundingClientRect().top;
+
+      if (sectionTop < window.innerHeight - 100) {
+        counters.forEach(counter => {
+          const target = +counter.getAttribute('data-target');
+          let count = 0;
+
+          const speed = target / 100; // lower = slower
+
+          const updateCount = () => {
+            count += speed;
+
+            if (count < target) {
+              counter.innerText = Math.floor(count);
+              requestAnimationFrame(updateCount);
+            } else {
+              counter.innerText = target.toLocaleString();
+            }
+          };
+
+          updateCount();
+        });
+
+        started = true;
+      }
+    }
+
+    window.addEventListener('scroll', startCounting);
+
+  </script>
   <script src="./script.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
