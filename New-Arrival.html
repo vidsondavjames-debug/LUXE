@@ -1,218 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Arrivals</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Arrivals</title>
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
 
-    body {
-      background: #f8f8f8;
-    }
+body{
+  background:#f8f8f8;
+}
 
-    main {
-      padding: 40px;
-    }
+main{
+  padding:40px;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.2rem;
-    }
+h1{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:2.2rem;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
 
-    .card {
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: 0.3s ease;
-      position: relative;
-    }
+.card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  transition:0.3s ease;
+  position:relative;
+}
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
 
-    .card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
+.card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
 
-    .badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: black;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-    }
+.badge{
+  position:absolute;
+  top:12px;
+  left:12px;
+  background:black;
+  color:white;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+}
 
-    .info {
-      padding: 15px;
-    }
+.info{
+  padding:15px;
+}
 
-    .info h3 {
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
+.info h3{
+  font-size:1rem;
+  margin-bottom:8px;
+}
 
-    .price {
-      color: #777;
-      margin-bottom: 12px;
-    }
+.price{
+  color:#777;
+  margin-bottom:12px;
+}
 
-    .actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.actions{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    button {
-      border: none;
-      padding: 8px 12px;
-      border-radius: 10px;
-      cursor: pointer;
-      background: black;
-      color: white;
-      font-size: 13px;
-    }
+button{
+  border:none;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  background:black;
+  color:white;
+  font-size:13px;
+}
 
-    button:hover {
-      opacity: 0.85;
-    }
+button:hover{
+  opacity:0.85;
+}
 
-    .wishlist {
-      font-size: 18px;
-      cursor: pointer;
-      color: #aaa;
-      transition: 0.2s;
-    }
+.wishlist{
+  font-size:18px;
+  cursor:pointer;
+  color:#aaa;
+  transition:0.2s;
+}
 
-    .wishlist.active {
-      color: red;
-    }
+.wishlist.active{
+  color:red;
+}
 
-    @media(max-width:600px) {
-      main {
-        padding: 20px
-      }
-    }
-  </style>
+@media(max-width:600px){
+  main{padding:20px}
+}
+</style>
 </head>
 
 <body>
 
-  <main>
-    <h1>New Arrivals</h1>
+<main>
+<h1>New Arrivals</h1>
 
-    <div class="grid" id="products">
+<div class="grid" id="products">
 
-      <!-- PRODUCT CARD -->
-      <div class="card">
-        <span class="badge">New</span>
-        <img src="https://images.unsplash.com/photo-1521336575822-6da63fb45455">
-        <div class="info">
-          <h3>Luxury Watch</h3>
-          <p class="price">$120</p>
-          <div class="actions">
+<!-- PRODUCT CARD -->
+<div class="card">
+<span class="badge">New</span>
+<img src="https://images.unsplash.com/photo-1521336575822-6da63fb45455">
+<div class="info">
+<h3>Luxury Watch</h3>
+<p class="price">$120</p>
+<div class="actions">
+<button onclick="addToCart(1,this)">Add to Cart</button>
+<i class="fa fa-heart wishlist" onclick="toggleWishlist(1,this)"></i>
+</div>
+</div>
+</div>
 
-            <button onclick="addToCart({
-              id: 121,
-              name: 'Luxury Watch',
-              price: 120,
-              img: 'https://images.unsplash.com/photo-1521336575822-6da63fb45455'
-            })">Add to Cart</button>
+<div class="card">
+<span class="badge">New</span>
+<img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
+<div class="info">
+<h3>Modern Sneakers</h3>
+<p class="price">$80</p>
+<div class="actions">
+<button onclick="addToCart(2,this)">Add to Cart</button>
+<i class="fa fa-heart wishlist" onclick="toggleWishlist(2,this)"></i>
+</div>
+</div>
+</div>
 
-            <i class="fa fa-heart wishlist" onclick="toggleWishlist({
-              id: 121,
-              name: 'Luxury Watch',
-              price: 120,
-              img: 'https://images.unsplash.com/photo-1521336575822-6da63fb45455'
-            }, this)"></i>
+<div class="card">
+<span class="badge">New</span>
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<div class="info">
+<h3>Elegant Dress</h3>
+<p class="price">$150</p>
+<div class="actions">
+<button onclick="addToCart(3,this)">Add to Cart</button>
+<i class="fa fa-heart wishlist" onclick="toggleWishlist(3,this)"></i>
+</div>
+</div>
+</div>
 
-          </div>
-        </div>
-      </div>
+</div>
+</main>
 
-      <div class="card">
-        <span class="badge">New</span>
-        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
-        <div class="info">
-          <h3>Modern Sneakers</h3>
-          <p class="price">$80</p>
-          <div class="actions">
-            <button onclick="addToCart({
-            id: 119,
-            name: 'Modern Sneakers',
-            price: 150,
-            img: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d'
-            })">Add to Cart</button>
+<script>
+function getCart(){return JSON.parse(localStorage.getItem('cartItems'))||[]}
+function getWishlist(){return JSON.parse(localStorage.getItem('wishlistItems'))||[]}
 
-            <i class="fa fa-heart wishlist" onclick="toggleWishlist({
-              id: 119,
-              name: 'Modern Sneakers',
-              price: 150,
-              img: 'https://images.unsplash.com/photo-1491553895911-0055eca6402d'
-            }, this)"></i>
-          </div>
-        </div>
-      </div>
+function saveCart(c){localStorage.setItem('cartItems',JSON.stringify(c))}
+function saveWishlist(w){localStorage.setItem('wishlistItems',JSON.stringify(w))}
 
-      <div class="card">
-        <span class="badge">New</span>
-        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-        <div class="info">
-          <h3>Elegant Dress</h3>
-          <p class="price">$150</p>
+function addToCart(id,btn){
+  const card=btn.closest('.card');
+  const product={
+    id:id,
+    name:card.querySelector('h3').innerText,
+    price:parseFloat(card.querySelector('.price').innerText.replace('$','')),
+    img:card.querySelector('img').src,
+    qty:1
+  };
 
-          <div class="actions">
+  let cart=getCart();
+  let exist=cart.find(i=>i.id===id);
 
-            <button onclick="addToCart({
-              id: 120,
-              name: 'Elegant Dress',
-              price: 150,
-              img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f'
-            })">Add to Cart</button>
+  if(exist){
+    exist.qty++;
+  }else{
+    cart.push(product);
+  }
 
-            <i class="fa fa-heart wishlist" onclick="toggleWishlist({
-              id: 120,
-              name: 'Elegant Dress',
-              price: 150,
-              img: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f'
-            }, this)"></i>
+  saveCart(cart);
+}
 
-          </div>
-        </div>
-      </div>
+function toggleWishlist(id,icon){
+  let wishlist=getWishlist();
+  let exist=wishlist.find(i=>i.id===id);
 
-    </div>
-    
-  </main>
+  const card=icon.closest('.card');
+  const product={
+    id:id,
+    name:card.querySelector('h3').innerText,
+    price:card.querySelector('.price').innerText,
+    img:card.querySelector('img').src
+  };
 
-  <script src="./script.js"></script>
+  if(exist){
+    wishlist=wishlist.filter(i=>i.id!==id);
+    icon.classList.remove('active');
+  }else{
+    wishlist.push(product);
+    icon.classList.add('active');
+  }
+
+  saveWishlist(wishlist);
+}
+</script>
 
 </body>
-
-<div id="toast"></div>
-
 </html>

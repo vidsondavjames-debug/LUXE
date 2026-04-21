@@ -1,235 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trending | LUXE</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fafafa;
+}
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+header{
+  padding:20px;
+  text-align:center;
+  font-size:28px;
+  font-weight:bold;
+}
 
-    <!-- Bootstrap CSS Link -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+.trending-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  padding:30px;
+}
 
-    <!-- Style Sheet Link -->
-    <link rel="stylesheet" href="./style.css">
+.card{
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+  position:relative;
+}
 
-    <!-- Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+.card:hover{
+  transform:translateY(-8px);
+}
 
-    <title>Trending | LUXE</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #fafafa;
-        }
+.card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+}
 
-        header {
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-        }
+.badge{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background:black;
+  color:white;
+  padding:5px 10px;
+  font-size:12px;
+  border-radius:20px;
+}
 
-        .trending-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            padding: 30px;
-        }
+.card-content{
+  padding:15px;
+}
 
-        .card {
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-            position: relative;
-        }
+.card-content h3{
+  margin:0;
+  font-size:18px;
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-        }
+.price{
+  margin:10px 0;
+  font-weight:bold;
+}
 
-        .card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
+.actions{
+  display:flex;
+  justify-content:space-between;
+}
 
-        .badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: black;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-            border-radius: 20px;
-        }
+button{
+  border:none;
+  padding:8px 12px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.3s;
+}
 
-        .card-content {
-            padding: 15px;
-        }
+.add-cart{
+  background:black;
+  color:white;
+}
 
-        .card-content h3 {
-            margin: 0;
-            font-size: 18px;
-        }
+.add-cart:hover{
+  background:#333;
+}
 
-        .price {
-            margin: 10px 0;
-            font-weight: bold;
-        }
+.wishlist{
+  background:#eee;
+}
 
-        .actions {
-            display: flex;
-            justify-content: space-between;
-        }
+.wishlist.active{
+  background:red;
+  color:white;
+}
 
-        button {
-            border: none;
-            padding: 8px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .add-cart {
-            background: black;
-            color: white;
-        }
-
-        .add-cart:hover {
-            background: #333;
-        }
-
-        .wishlist {
-            background: #eee;
-        }
-
-        .wishlist.active {
-            background: red;
-            color: white;
-        }
-
-        @media(max-width:600px) {
-            header {
-                font-size: 22px;
-            }
-        }
-    </style>
+@media(max-width:600px){
+  header{
+    font-size:22px;
+  }
+}
+</style>
 </head>
-
 <body>
 
-    <header>🔥 Trending Now</header>
+<header>🔥 Trending Now</header>
 
-    <section class="trending-container">
+<section class="trending-container">
 
-        <div class="card">
-            <span class="badge">Hot</span>
-            <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" />
-            <div class="card-content">
-                <h3>Luxury Dress</h3>
-                <div class="price">$120</div>
-                <div class="actions">
-                    <button class="add-cart" onclick="addToCart({
-              id: 131,
-              name: 'Luxury Dress',
-              price: 120,
-              img: 'https://images.unsplash.com/photo-1520975916090-3105956dac38'
-            })">Add to Cart</button>
+<div class="card">
+  <span class="badge">Hot</span>
+  <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38"/>
+  <div class="card-content">
+    <h3>Luxury Dress</h3>
+    <div class="price">$120</div>
+    <div class="actions">
+      <button class="add-cart">Add to Cart</button>
+      <button class="wishlist"><i class="fa fa-heart"></i></button>
+    </div>
+  </div>
+</div>
 
-                    <button class="wishlist" onclick="toggleWishlist({
-              id: 131,
-              name: 'Luxury Dress',
-              price: 120,
-              img: 'https://images.unsplash.com/photo-1520975916090-3105956dac38'
-            }, this)"><i class="fa fa-heart"></i></button>
-                </div>
-            </div>
-        </div>
+<div class="card">
+  <span class="badge">Trending</span>
+  <img src="https://images.unsplash.com/photo-1592878904946-b3cd3be2d4f9"/>
+  <div class="card-content">
+    <h3>Classic Suit</h3>
+    <div class="price">$250</div>
+    <div class="actions">
+      <button class="add-cart">Add to Cart</button>
+      <button class="wishlist"><i class="fa fa-heart"></i></button>
+    </div>
+  </div>
+</div>
 
-        <div class="card">
-            <span class="badge">Trending</span>
-            <img src="https://images.unsplash.com/photo-1592878904946-b3cd3be2d4f9" />
-            <div class="card-content">
-                <h3>Classic Suit</h3>
-                <div class="price">$250</div>
-                <div class="actions">
-                    <button class="add-cart" onclick="addToCart({
-              id: 132,
-              name: 'Classic Suit',
-              price: 250,
-              img: 'https://images.unsplash.com/photo-1592878904946-b3cd3be2d4f9'
-            })">Add to Cart</button>
+<div class="card">
+  <span class="badge">Popular</span>
+  <img src="https://images.unsplash.com/photo-1519741497674-611481863552"/>
+  <div class="card-content">
+    <h3>Modern Trousers</h3>
+    <div class="price">$80</div>
+    <div class="actions">
+      <button class="add-cart">Add to Cart</button>
+      <button class="wishlist"><i class="fa fa-heart"></i></button>
+    </div>
+  </div>
+</div>
 
-                    <button class="wishlist" onclick="toggleWishlist({
-              id: 132,
-              name: 'Classic Suit',
-              price: 250,
-              img: 'https://images.unsplash.com/photo-1592878904946-b3cd3be2d4f9'
-            }, this)"><i class="fa fa-heart"></i></button>
-                </div>
-            </div>
-        </div>
+<div class="card">
+  <span class="badge">New</span>
+  <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d"/>
+  <div class="card-content">
+    <h3>Luxury Watch</h3>
+    <div class="price">$300</div>
+    <div class="actions">
+      <button class="add-cart">Add to Cart</button>
+      <button class="wishlist"><i class="fa fa-heart"></i></button>
+    </div>
+  </div>
+</div>
 
-        <div class="card">
-            <span class="badge">Popular</span>
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552" />
-            <div class="card-content">
-                <h3>Modern Trousers</h3>
-                <div class="price">$80</div>
-                <div class="actions">
-                    <button class="add-cart" onclick="addToCart({
-              id: 133,
-              name: 'Modern Trousers',
-              price: 80,
-              img: 'https://images.unsplash.com/photo-1519741497674-611481863552'
-            })">Add to Cart</button>
+</section>
 
-                    <button class="wishlist" onclick="toggleWishlist({
-              id: 133,
-              name: 'Modern Trousers',
-              price: 80,
-              img: 'https://images.unsplash.com/photo-1519741497674-611481863552'
-            }, this)"><i class="fa fa-heart"></i></button>
-                </div>
-            </div>
-        </div>
+<script>
+// LOCAL STORAGE LOGIC
+function getCart(){
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}
 
-        <div class="card">
-            <span class="badge">New</span>
-            <img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d" />
-            <div class="card-content">
-                <h3>Luxury Watch</h3>
-                <div class="price">$300</div>
-                <div class="actions">
-                    <button class="add-cart" onclick="addToCart({
-              id: 134,
-              name: 'Luxury Watch',
-              price: 300,
-              img: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d'
-            })">Add to Cart</button>
+function saveCart(cart){
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-                    <button class="wishlist" onclick="toggleWishlist({
-              id: 134,
-              name: 'Luxury Watch',
-              price: 300,
-              img: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d'
-            }, this)"><i class="fa fa-heart"></i></button>
-                </div>
-            </div>
-        </div>
+function getWishlist(){
+  return JSON.parse(localStorage.getItem("wishlist")) || [];
+}
 
-    </section>
+function saveWishlist(list){
+  localStorage.setItem("wishlist", JSON.stringify(list));
+}
 
-    <script src="./script.js"></script>
+// ADD TO CART
+
+document.querySelectorAll(".add-cart").forEach((btn,index)=>{
+  btn.addEventListener("click",()=>{
+    let cart = getCart();
+    cart.push({id:index,name:"item"+index});
+    saveCart(cart);
+    alert("Added to cart");
+  });
+});
+
+// WISHLIST
+
+document.querySelectorAll(".wishlist").forEach((btn,index)=>{
+  btn.addEventListener("click",()=>{
+    let list = getWishlist();
+    list.push({id:index});
+    saveWishlist(list);
+    btn.classList.toggle("active");
+  });
+});
+</script>
 
 </body>
-
-<div id="toast"></div>
-
 </html>

@@ -115,6 +115,24 @@
             margin: 12px 0;
         }
 
+        #toast {
+            position: fixed;
+            /* THIS FIXES YOUR ISSUE */
+            bottom: 20px;
+            right: 20px;
+            background: black;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            opacity: 0;
+            z-index: 9999;
+            transition: 0.3s;
+        }
+
+        #toast.show {
+            opacity: 1;
+        }
+
         /* Responsive */
         @media(max-width: 768px) {
             .container {
@@ -135,14 +153,14 @@
             <h2>Wishlist Summary</h2>
             <div>
                 <span>Total Items</span>
-                <span id="count">0</span>
+                <span id="wishlist-count">0</span>
             </div>
         </div>
     </div>
 
-    <script src="./script.js">
-    
-    </script>
+    <script src="./script.js"></script>
+
+    <div id="toast"></div>
 
 </body>
 

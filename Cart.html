@@ -132,6 +132,24 @@
             transition: 0.3s;
         }
 
+        #toast {
+            position: fixed;
+            /* THIS FIXES YOUR ISSUE */
+            bottom: 20px;
+            right: 20px;
+            background: black;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            opacity: 0;
+            z-index: 9999;
+            transition: 0.3s;
+        }
+
+        #toast.show {
+            opacity: 1;
+        }
+
         .checkout:hover {
             opacity: 0.85;
         }
@@ -154,6 +172,10 @@
         <div class="summary">
             <h2>Order Summary</h2>
             <div>
+                <span>Total Items</span>
+                <span id="cart-count">0</span>
+            </div>
+            <div>
                 <span>Subtotal</span>
                 <span id="subtotal">$0</span>
             </div>
@@ -170,6 +192,8 @@
     </div>
 
     <script src="./script.js"></script>
+
+    <div id="toast"></div>
 
 </body>
 
