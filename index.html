@@ -1,328 +1,404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <!-- Bootstrap CSS Link -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
 
     <!-- Style Sheet Link -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./main.css" />
 
     <!-- Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./assets/favicons/Home-favicon.png">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/favicons/Home-favicon.png"
+    />
 
     <title>LUXE Homepage Preview</title>
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-            background: #fff;
-        }
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+        background: #fff;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <header>
+      <nav class="main-navbar-1">
+        <!-- LOGO -->
+        <div class="logo">
+          <a href="./index.html"
+            ><img src="./assets/Main-logo.webp" alt="Logo"
+          /></a>
+        </div>
 
-  <header>
-    <nav class="main-navbar-1">
+        <!-- HAMBURGER -->
+        <button id="hamburger" class="hamburger" aria-expanded="false">
+          ☰
+        </button>
 
-      <!-- LOGO -->
-      <div class="logo">
-        <a href="./index.html"><img src="./assets/Main-logo.webp" alt="Logo"></a>
-      </div>
+        <!-- NAV LINKS -->
+        <ul class="nav-center-1" id="navMenu-1">
+          <li><a href="./index.html">Home</a></li>
 
-      <!-- HAMBURGER -->
-      <button id="hamburger" class="hamburger" aria-expanded="false">☰</button>
+          <li class="has-dropdown-1">
+            <a href="#">Pages <span class="arrow">▾</span></a>
+            <div class="dropdown-1">
+              <a href="./About.html">About Us</a>
+              <a href="./Services.html">Services</a>
+              <a href="./FAQ.html">FAQ</a>
+              <a href="./Pricing.html">Pricing</a>
+              <a href="./About.html#team">Team</a>
+              <a href="./Careers.html">Careers</a>
+            </div>
+          </li>
 
-      <!-- NAV LINKS -->
-      <ul class="nav-center-1" id="navMenu-1">
+          <li class="has-dropdown-1">
+            <a href="#">Collections <span class="arrow">▾</span></a>
+            <div class="dropdown-1">
+              <a href="./New-Arrival.html">New Arrivals</a>
+              <a href="./Bestsellers.html">Best Sellers</a>
+              <a href="./Trending.html">Trending</a>
+              <a href="./Seasonal.html">Seasonal</a>
+              <a href="./Limited-Edition.html">Limited Edition</a>
+              <a href="./Sales.html">Sale</a>
+            </div>
+          </li>
 
-        <li><a href="./index.html">Home</a></li>
+          <li class="has-dropdown-1">
+            <a href="#">Shop <span class="arrow">▾</span></a>
+            <div class="dropdown-1">
+              <a href="./Men.html">Men</a>
+              <a href="./Women.html">Women</a>
+              <a href="./Shoes.html">Shoes</a>
+              <a href="./Bags.html">Bags</a>
+              <a href="./Accessories.html">Accessories</a>
+              <a href="./Watches.html">Watches</a>
+            </div>
+          </li>
 
-        <li class="has-dropdown-1">
-          <a href="#">Pages <span class="arrow">▾</span></a>
-          <div class="dropdown-1">
-            <a href="./About.html">About Us</a>
-            <a href="./Services.html">Services</a>
-            <a href="./FAQ.html">FAQ</a>
-            <a href="./Pricing.html">Pricing</a>
-            <a href="./About.html#team">Team</a>
-            <a href="./Careers.html">Careers</a>
-          </div>
-        </li>
+          <li><a href="./Contact.html">Contacts</a></li>
 
-        <li class="has-dropdown-1">
-          <a href="#">Collections <span class="arrow">▾</span></a>
-          <div class="dropdown-1">
-            <a href="./New-Arrival.html">New Arrivals</a>
-            <a href="./Bestsellers.html">Best Sellers</a>
-            <a href="./Trending.html">Trending</a>
-            <a href="./Seasonal.html">Seasonal</a>
-            <a href="./Limited-Edition.html">Limited Edition</a>
-            <a href="./Sales.html">Sale</a>
-          </div>
-        </li>
+          <!-- MOBILE AUTH LINKS -->
+          <li class="mobile-only">
+            <a href="./login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+          </li>
 
-        <li class="has-dropdown-1">
-          <a href="#">Shop <span class="arrow">▾</span></a>
-          <div class="dropdown-1">
-            <a href="./Men.html">Men</a>
-            <a href="./Women.html">Women</a>
-            <a href="./Shoes.html">Shoes</a>
-            <a href="./Bags.html">Bags</a>
-            <a href="./Accessories.html">Accessories</a>
-            <a href="./Watches.html">Watches</a>
-          </div>
-        </li>
+          <li class="mobile-only">
+            <a href="./signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+          </li>
 
-        <li><a href="./Contact.html">Contacts</a></li>
+          <li class="mobile-only">
+            <a href="./Cart.html"> <i class="fas fa-shopping-cart"></i> Cart</a>
+          </li>
 
-        <!-- MOBILE AUTH LINKS -->
-        <li class="mobile-only">
-          <a href="./login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
-        </li>
+          <li class="mobile-only">
+            <a href="./wishlist.html">
+              <i class="fas fa-heart"></i> Wishlist
+            </a>
+          </li>
+        </ul>
 
-        <li class="mobile-only">
-          <a href="./signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
-        </li>
+        <!-- RIGHT ICONS -->
+        <div class="nav-right-1">
+          <a href="./login.html" class="icon-link">
+            <i class="fas fa-sign-in-alt"></i>
+            <span>Login</span>
+          </a>
 
-        <li class="mobile-only">
-          <a href="./Cart.html"> <i class="fas fa-shopping-cart"></i> Cart</a>
-        </li>
+          <a href="./signup.html" class="icon-link">
+            <i class="fas fa-user-plus"></i>
+            <span>Sign Up</span>
+          </a>
 
-        <li class="mobile-only">
-          <a href="./wishlist.html"> <i class="fas fa-heart"></i> Wishlist </a>
-        </li>
+          <a href="./Cart.html" class="icon-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Cart</span>
+          </a>
 
-      </ul>
-
-      <!-- RIGHT ICONS -->
-      <div class="nav-right-1">
-        <a href="./login.html" class="icon-link">
-          <i class="fas fa-sign-in-alt"></i>
-          <span>Login</span>
-        </a>
-
-        <a href="./signup.html" class="icon-link">
-          <i class="fas fa-user-plus"></i>
-          <span>Sign Up</span>
-        </a>
-
-        <a href="./Cart.html" class="icon-link">
-          <i class="fas fa-shopping-cart"></i>
-          <span>Cart</span>
-        </a>
-
-        <a href="./wishlist.html" class="icon-link">
-          <i class="fas fa-heart"></i>
-          <span>Wishlist</span>
-        </a>
-      </div>
-
-    </nav>
-  </header>
+          <a href="./wishlist.html" class="icon-link">
+            <i class="fas fa-heart"></i>
+            <span>Wishlist</span>
+          </a>
+        </div>
+      </nav>
+    </header>
 
     <main>
-        <!-- HERO -->
-        <section class="lux-hero">
-            <video autoplay muted loop playsinline>
-                <source src="./assets/Luxury-Hero-Video.mp4" type="video/mp4">
-            </video>
-            <div class="lux-overlay">
-                <div data-aos="fade-right" data-aos-duration="1500">
-                    <h1>WELCOME TO LUXE</h1>
-                </div>
-                <p data-aos="fade-left" data-aos-duration="2000">Luxury Fashion. Timeless Elegance.</p>
-                <a href="#men-section" class="lux-cta" data-aos="fade-up-right" data-aos-duration="2500">Explore
-                    Collections</a>
-            </div>
-        </section>
+      <!-- HERO -->
+      <section class="lux-hero">
+        <video autoplay muted loop playsinline>
+          <source src="./assets/Luxury-Hero-Video.mp4" type="video/mp4" />
+        </video>
+        <div class="lux-overlay">
+          <div data-aos="fade-right" data-aos-duration="1500">
+            <h1>WELCOME TO LUXE</h1>
+          </div>
+          <p data-aos="fade-left" data-aos-duration="2000">
+            Luxury Fashion. Timeless Elegance.
+          </p>
+          <a
+            href="#men-section"
+            class="lux-cta"
+            data-aos="fade-up-right"
+            data-aos-duration="2500"
+            >Explore Collections</a
+          >
+        </div>
+      </section>
 
-        <!-- MEN -->
-        <section class="lux-row row" id="men-section">
-            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-                style="background-image:url(./Men-Items/Luxury-Mens-Clothing\(13\).webp); width: 100% ;">
-            </div>
+      <div class="hero" id="heroSlider">
+        <button
+          class="nav-btn nav-prev"
+          id="prevBtn"
+          aria-label="Previous slide"
+        >
+          &#8592;
+        </button>
 
-            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-                <h2>Men's Collection</h2>
-                <p>Premium menswear crafted for confidence and prestige.</p>
-                <a href="./Men.html" class="lux-btn">Shop Now</a>
-            </div>
+        <div class="hero-content">
+          <h1 class="hero-title" id="slideTitle">LUXURY<br />SHOES</h1>
+          <p class="hero-desc" id="slideDesc">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor.
+          </p>
+          <button class="hero-cta" id="slideBtn">
+            <span class="hero-cta-line"></span>
+            SHOP NOW
+          </button>
+        </div>
 
-        </section>
+        <div class="hero-image-area">
+          <div class="hero-circle" id="heroCircle">
+            <img
+              class="hero-shoe-img"
+              id="slideImg"
+              src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=640&q=80"
+              alt="Grey felt luxury shoes with tan laces"
+            />
+          </div>
+          <div class="price-badge" id="priceBadge">$5.59</div>
+        </div>
 
-        <!-- WOMEN -->
-        <section class="lux-row reverse row">
-            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-                style="background-image:url('https://images.unsplash.com/photo-1520975916090-3105956dac38'); width: 100% ;">
-            </div>
+        <button class="nav-btn nav-next" id="nextBtn" aria-label="Next slide">
+          &#8594;
+        </button>
 
-            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-                <h2>Women's Collection</h2>
-                <p>Elegant, graceful and modern luxury fashion.</p>
-                <a href="./Women.html" class="lux-btn">Shop Now</a>
-            </div>
+        <div class="dots" id="dotsContainer"></div>
+      </div>
 
-        </section>
+      <!-- MEN -->
+      <section class="lux-row row" id="men-section">
+        <div
+          class="lux-img col-lg-6 col-md-12 col-sm-12"
+          style="
+            background-image: url(./Men-Items/Luxury-Mens-Clothing\(13\).webp);
+            width: 100%;
+          "
+        ></div>
 
-        <!-- SHOES -->
-        <section class="lux-row row">
-            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-                style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff'); width: 100% ;">
-            </div>
+        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+          <h2>Men's Collection</h2>
+          <p>Premium menswear crafted for confidence and prestige.</p>
+          <a href="./Men.html" class="lux-btn">Shop Now</a>
+        </div>
+      </section>
 
-            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-                <h2>Shoes</h2>
-                <p>Luxury footwear built for comfort and status.</p>
-                <a href="./Shoes.html" class="lux-btn">Shop Now</a>
-            </div>
+      <!-- WOMEN -->
+      <section class="lux-row reverse row">
+        <div
+          class="lux-img col-lg-6 col-md-12 col-sm-12"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1520975916090-3105956dac38&quot;);
+            width: 100%;
+          "
+        ></div>
 
-        </section>
+        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+          <h2>Women's Collection</h2>
+          <p>Elegant, graceful and modern luxury fashion.</p>
+          <a href="./Women.html" class="lux-btn">Shop Now</a>
+        </div>
+      </section>
 
-        <!-- BAGS -->
-        <section class="lux-row reverse row">
-            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-                style="background-image:url('https://images.unsplash.com/photo-1584917865442-de89df76afd3'); width: 100% ;">
-            </div>
+      <!-- SHOES -->
+      <section class="lux-row row">
+        <div
+          class="lux-img col-lg-6 col-md-12 col-sm-12"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1542291026-7eec264c27ff&quot;);
+            width: 100%;
+          "
+        ></div>
 
-            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-                <h2>Bags</h2>
-                <p>Iconic designer bags for everyday luxury.</p>
-                <a href="./Bags.html" class="lux-btn">Shop Now</a>
-            </div>
+        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+          <h2>Shoes</h2>
+          <p>Luxury footwear built for comfort and status.</p>
+          <a href="./Shoes.html" class="lux-btn">Shop Now</a>
+        </div>
+      </section>
 
-        </section>
+      <!-- BAGS -->
+      <section class="lux-row reverse row">
+        <div
+          class="lux-img col-lg-6 col-md-12 col-sm-12"
+          style="
+            background-image: url(&quot;https://images.unsplash.com/photo-1584917865442-de89df76afd3&quot;);
+            width: 100%;
+          "
+        ></div>
 
-        <!-- WATCHES -->
-        <section class="lux-row row">
-            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-                style="background-image:url(./watches/Luxury\ Watch\ \(13\).webp); width: 100% ;">
-            </div>
+        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+          <h2>Bags</h2>
+          <p>Iconic designer bags for everyday luxury.</p>
+          <a href="./Bags.html" class="lux-btn">Shop Now</a>
+        </div>
+      </section>
 
-            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-                <h2>Watches</h2>
-                <p>Timeless watches designed for distinction.</p>
-                <a href="./Watches.html" class="lux-btn">Shop Now</a>
-            </div>
+      <!-- WATCHES -->
+      <section class="lux-row row">
+        <div
+          class="lux-img col-lg-6 col-md-12 col-sm-12"
+          style="
+            background-image: url(./watches/Luxury\ Watch\ \(13\).webp);
+            width: 100%;
+          "
+        ></div>
 
-        </section>
+        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+          <h2>Watches</h2>
+          <p>Timeless watches designed for distinction.</p>
+          <a href="./Watches.html" class="lux-btn">Shop Now</a>
+        </div>
+      </section>
 
-        <!-- ACCESSORIES -->
-        <section class="lux-row reverse row mb-2">
-            <div class="lux-img col-lg-6 col-md-12 col-sm-12"
-                style="background-image:url(./accessories/Luxury-Jeweleries.webp); width: 100% ;">
-            </div>
+      <!-- ACCESSORIES -->
+      <section class="lux-row reverse row mb-2">
+        <div
+          class="lux-img col-lg-6 col-md-12 col-sm-12"
+          style="
+            background-image: url(./accessories/Luxury-Jeweleries.webp);
+            width: 100%;
+          "
+        ></div>
 
-            <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
-                <h2>Accessories</h2>
-                <p>Luxury rings, necklaces and finishing touches.</p>
-                <a href="./Accessories.html" class="lux-btn">Shop Now</a>
-            </div>
-
-        </section>
+        <div class="lux-text col-lg-6 col-md-12 col-sm-12 w-100">
+          <h2>Accessories</h2>
+          <p>Luxury rings, necklaces and finishing touches.</p>
+          <a href="./Accessories.html" class="lux-btn">Shop Now</a>
+        </div>
+      </section>
     </main>
 
     <footer class="lux-footer">
+      <div class="footer-container">
+        <!-- Brand -->
+        <div class="footer-col brand-col">
+          <a href="#"
+            ><img
+              src="./assets/Main-logo.webp"
+              alt="LUXE Logo"
+              class="footer-logo"
+          /></a>
 
-        <div class="footer-container">
+          <p class="footer-description">
+            Elevating your lifestyle with premium collections, timeless fashion,
+            and modern elegance.
+          </p>
 
-            <!-- Brand -->
-            <div class="footer-col brand-col">
-
-                <a href="#"><img src="./assets/Main-logo.webp" alt="LUXE Logo" class="footer-logo"></a>
-
-                <p class="footer-description">
-                    Elevating your lifestyle with premium collections,
-                    timeless fashion, and modern elegance.
-                </p>
-
-                <div class="social-icons">
-                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.pinterest.com"><i class="fab fa-pinterest-p"></i></a>
-                </div>
-            </div>
-
-
-            <!-- Shop -->
-            <div class="footer-col">
-                <h3>Shop</h3>
-                <ul>
-                    <li><a href="./Men.html">Men</a></li>
-                    <li><a href="./Bags.html">Bags</a></li>
-                    <li><a href="./Shoes.html">Shoes</a></li>
-                    <li><a href="./Women.html">Women</a></li>
-                    <li><a href="./Accessories.html">Accessories</a></li>
-                    <li><a href="./Watches.html">Watches</a></li>
-                </ul>
-            </div>
-
-
-            <!-- Support -->
-            <div class="footer-col">
-                <h3>Support</h3>
-                <ul>
-                    <li><a href="./About.html">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Shipping & Returns</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms</a></li>
-                </ul>
-            </div>
-
-
-            <!-- Newsletter -->
-            <div class="footer-col newsletter">
-                <h3>Newsletter</h3>
-                <p>Subscribe for exclusive updates.</p>
-                <form>
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-
+          <div class="social-icons">
+            <a href="https://www.facebook.com"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://www.instagram.com"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.pinterest.com"
+              ><i class="fab fa-pinterest-p"></i
+            ></a>
+          </div>
         </div>
 
-        <!-- Payments -->
-        <div class="payment-section">
-
-            <div class="gold-separator"></div>
-
-            <h4>We Accept</h4>
-
-            <div class="payment-icons">
-
-                <div class="payment-card visa"><i class="fab fa-cc-visa"></i></div>
-                <div class="payment-card mastercard"><i class="fab fa-cc-mastercard"></i></div>
-                <div class="payment-card amex"><i class="fab fa-cc-amex"></i></div>
-                <div class="payment-card paypal"><i class="fab fa-cc-paypal"></i></div>
-                <div class="payment-card applepay"><i class="fab fa-cc-apple-pay"></i></div>
-
-            </div>
-
+        <!-- Shop -->
+        <div class="footer-col">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="./Men.html">Men</a></li>
+            <li><a href="./Bags.html">Bags</a></li>
+            <li><a href="./Shoes.html">Shoes</a></li>
+            <li><a href="./Women.html">Women</a></li>
+            <li><a href="./Accessories.html">Accessories</a></li>
+            <li><a href="./Watches.html">Watches</a></li>
+          </ul>
         </div>
 
-        <div class="footer-bottom">
-            © 2026 LUXE. All Rights Reserved.
+        <!-- Support -->
+        <div class="footer-col">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="./About.html">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
         </div>
 
+        <!-- Newsletter -->
+        <div class="footer-col newsletter">
+          <h3>Newsletter</h3>
+          <p>Subscribe for exclusive updates.</p>
+          <form>
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Payments -->
+      <div class="payment-section">
+        <div class="gold-separator"></div>
+
+        <h4>We Accept</h4>
+
+        <div class="payment-icons">
+          <div class="payment-card visa"><i class="fab fa-cc-visa"></i></div>
+          <div class="payment-card mastercard">
+            <i class="fab fa-cc-mastercard"></i>
+          </div>
+          <div class="payment-card amex"><i class="fab fa-cc-amex"></i></div>
+          <div class="payment-card paypal">
+            <i class="fab fa-cc-paypal"></i>
+          </div>
+          <div class="payment-card applepay">
+            <i class="fab fa-cc-apple-pay"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2026 LUXE. All Rights Reserved.</div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -330,8 +406,7 @@
     <script src="./script.js"></script>
 
     <script>
-        AOS.init();
+      AOS.init();
     </script>
-</body>
-
+  </body>
 </html>

@@ -338,3 +338,105 @@ function showToast(message) {
         toast.classList.remove("show");
     }, 2000);
 }
+
+
+  const slides = [
+    {
+      title: "LUXURY<br>SHOES",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.",
+      price: "$5.59",
+      img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=640&q=80",
+      alt: "Grey felt luxury shoes with tan laces"
+    },
+    {
+      title: "URBAN<br>CLASSICS",
+      desc: "Timeless silhouettes crafted from full-grain leather for the discerning modern soul.",
+      price: "$8.99",
+      img: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=640&q=80",
+      alt: "Classic leather sneaker"
+    },
+    {
+      title: "WEEKEND<br>EDITION",
+      desc: "Effortless comfort meets refined style — perfect for every occasion from dusk to dawn.",
+      price: "$6.49",
+      img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=640&q=80",
+      alt: "Casual white lifestyle sneaker"
+    }
+  ];
+
+  let current = 0;
+  let animating = false;
+  let autoTimer;
+
+  // Build dots
+  const dotsContainer = document.getElementById('dotsContainer');
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function updateDots() {
+    document.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(idx) {
+    if (animating || idx === current) return;
+    animating = true;
+
+    const content = document.querySelector('.hero-content');
+    const circle = document.getElementById('heroCircle');
+
+    content.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    circle.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    content.style.opacity = '0';
+    content.style.transform = 'translateY(12px)';
+    circle.style.opacity = '0';
+    circle.style.transform = 'scale(0.95)';
+
+    setTimeout(() => {
+      current = idx;
+      const s = slides[current];
+      document.getElementById('slideTitle').innerHTML = s.title;
+      document.getElementById('slideDesc').textContent = s.desc;
+      document.getElementById('priceBadge').textContent = s.price;
+      document.getElementById('slideImg').src = s.img;
+      document.getElementById('slideImg').alt = s.alt;
+
+      updateDots();
+
+      content.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      circle.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      content.style.opacity = '1';
+      content.style.transform = 'translateY(0)';
+      circle.style.opacity = '1';
+      circle.style.transform = 'scale(1)';
+
+      animating = false;
+    }, 310);
+  }
+
+  function changeSlide(dir) {
+    goTo((current + dir + slides.length) % slides.length);
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => changeSlide(-1));
+  document.getElementById('nextBtn').addEventListener('click', () => changeSlide(1));
+
+  function startAuto() {
+    autoTimer = setInterval(() => changeSlide(1), 4500);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer);
+  }
+
+  const hero = document.getElementById('heroSlider');
+  hero.addEventListener('mouseenter', stopAuto);
+  hero.addEventListener('mouseleave', startAuto);
+
+  startAuto();
